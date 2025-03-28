@@ -8,100 +8,81 @@
 </head>
 <body>
     <header>
-        <h1>Tienda Online</h1>
+        <div class="logo">Tienda Online</div>
         <nav>
             <ul>
                 <li><a href="index.php">Inicio</a></li>
                 <li><a href="catalogo.php">Catálogo</a></li>
                 <li><a href="carrito.php">Carrito</a></li>
+                <li><a href="contacto.php">Contacto</a></li>
                 <li><a href="login.php">Iniciar Sesión</a></li>
             </ul>
         </nav>
     </header>
+    
     <main>
-        <h2>Bienvenido a nuestra tienda</h2>
-        <p>Descubre nuestros productos destacados.</p>
-        
-        <section id="productos">
-            <h3>Productos Destacados</h3>
-            <div class="producto">
-                <img src="img/producto1.jpg" alt="Producto 1">
-                <h4>Producto 1</h4>
-                <p>Precio: $20.00</p>
-                <button onclick="agregarAlCarrito(1, 'Producto 1', 20.00)">Añadir al carrito</button>
-            </div>
-            <div class="producto">
-                <img src="img/producto2.jpg" alt="Producto 2">
-                <h4>Producto 2</h4>
-                <p>Precio: $25.00</p>
-                <button onclick="agregarAlCarrito(2, 'Producto 2', 25.00)">Añadir al carrito</button>
-            </div>
-        </section>
-        
-        <section id="carrito">
-            <h3>Carrito de Compras</h3>
-            <ul id="lista-carrito"></ul>
-            <p>Total: $<span id="total-carrito">0.00</span></p>
-            <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+        <section class="banner">
+            <h1>Bienvenido a nuestra Tienda Online</h1>
+            <p>Encuentra los mejores productos al mejor precio</p>
+            <a href="catalogo.php" class="btn">Explorar Catálogo</a>
         </section>
 
-        <section id="checkout">
-            <h3>Finalizar Compra</h3>
-            <form action="procesar_pago.php" method="POST">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
+        <section class="destacados">
+            <h2>Productos Destacados</h2>
+            <div class="productos-container">
+                <!-- Aquí se cargarán los productos con PHP -->
+            </div>
+        </section>
 
-                <label for="direccion">Dirección:</label>
-                <input type="text" id="direccion" name="direccion" required>
+        <section class="categorias">
+            <h2>Categorías Populares</h2>
+            <div class="categoria-container">
+                <div class="categoria"><a href="#">Electrónica</a></div>
+                <div class="categoria"><a href="#">Ropa</a></div>
+                <div class="categoria"><a href="#">Hogar</a></div>
+                <div class="categoria"><a href="#">Deportes</a></div>
+            </div>
+        </section>
 
-                <label for="metodo_pago">Método de Pago:</label>
-                <select id="metodo_pago" name="metodo_pago">
-                    <option value="tarjeta">Tarjeta de Crédito</option>
-                    <option value="paypal">PayPal</option>
-                </select>
-
-                <button type="submit">Pagar</button>
-            </form>
+        <section class="testimonios">
+            <h2>Lo que dicen nuestros clientes</h2>
+            <div class="testimonio-container">
+                <div class="testimonio">
+                    <p>"Excelente tienda, productos de calidad y envíos rápidos."</p>
+                    <span>- Juan Pérez</span>
+                </div>
+                <div class="testimonio">
+                    <p>"Me encanta la atención al cliente, siempre atentos y dispuestos a ayudar."</p>
+                    <span>- María Gómez</span>
+                </div>
+            </div>
         </section>
     </main>
+    
     <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Sobre Nosotros</h3>
+                <p>Somos una tienda en línea dedicada a ofrecer productos de alta calidad a precios competitivos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="politica.php">Política de Privacidad</a></li>
+                    <li><a href="terminos.php">Términos y Condiciones</a></li>
+                    <li><a href="contacto.php">Contáctanos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+        </div>
         <p>&copy; 2025 Tienda Online - Todos los derechos reservados</p>
     </footer>
-    <script>
-        function agregarAlCarrito(id, nombre, precio) {
-            let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-            let producto = carrito.find(p => p.id === id);
-            if (producto) {
-                producto.cantidad++;
-            } else {
-                carrito.push({ id, nombre, precio, cantidad: 1 });
-            }
-            localStorage.setItem("carrito", JSON.stringify(carrito));
-            mostrarCarrito();
-        }
-
-        function mostrarCarrito() {
-            let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-            let listaCarrito = document.getElementById("lista-carrito");
-            let totalCarrito = document.getElementById("total-carrito");
-            listaCarrito.innerHTML = "";
-            let total = 0;
-
-            carrito.forEach(producto => {
-                let li = document.createElement("li");
-                li.textContent = `${producto.nombre} - $${producto.precio} x ${producto.cantidad}`;
-                listaCarrito.appendChild(li);
-                total += producto.precio * producto.cantidad;
-            });
-            totalCarrito.textContent = total.toFixed(2);
-        }
-
-        function vaciarCarrito() {
-            localStorage.removeItem("carrito");
-            mostrarCarrito();
-        }
-
-        document.addEventListener("DOMContentLoaded", mostrarCarrito);
-    </script>
 </body>
 </html>
