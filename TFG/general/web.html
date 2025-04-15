@@ -19,26 +19,50 @@
             </ul>
         </nav>
     </header>
-    
+
     <main>
+        <!-- Banner principal -->
         <section class="banner">
             <h1>Bienvenido a nuestra Tienda Online</h1>
             <p>Encuentra los mejores productos al mejor precio</p>
             <a href="catalogo.php" class="btn">Explorar Catálogo</a>
         </section>
 
-        <br> 
-        <div style="page-break-before: always;"></div> 
+        <!-- Barra de búsqueda -->
+        <section class="busqueda" style="text-align: center; margin-top: 2rem;">
+            <form action="buscar.php" method="GET">
+                <input type="text" name="q" placeholder="Buscar productos..." style="padding: 0.5rem; width: 60%; max-width: 400px; border-radius: 6px; border: 1px solid #ccc;">
+                <button type="submit" class="btn" style="margin-left: 1rem;">Buscar</button>
+            </form>
+        </section>
 
+        <!-- Productos Destacados -->
         <section class="destacados">
             <h2>Productos Destacados</h2>
             <div class="productos-container">
+                <!-- Tarjetas de ejemplo -->
+                <div class="producto">
+                    <img src="img/producto1.jpg" alt="Producto 1">
+                    <h3>Auriculares Bluetooth</h3>
+                    <p>29.99€</p>
+                    <a href="carrito.php" class="btn">Agregar al carrito</a>
+                </div>
+                <div class="producto">
+                    <img src="img/producto2.jpg" alt="Producto 2">
+                    <h3>Sudadera Urbana</h3>
+                    <p>39.99€</p>
+                    <a href="carrito.php" class="btn">Agregar al carrito</a>
+                </div>
+                <div class="producto">
+                    <img src="img/producto3.jpg" alt="Producto 3">
+                    <h3>Pack Cocina Pro</h3>
+                    <p>59.99€</p>
+                    <a href="carrito.php" class="btn">Agregar al carrito</a>
+                </div>
             </div>
         </section>
 
-        <br> 
-        <div style="page-break-before: always;"></div> 
-
+        <!-- Categorías -->
         <section class="categorias">
             <h2>Categorías Populares</h2>
             <div class="categoria-container">
@@ -49,9 +73,7 @@
             </div>
         </section>
 
-        <br> 
-        <div style="page-break-before: always;"></div>
-
+        <!-- Testimonios -->
         <section class="testimonios">
             <h2>Lo que dicen nuestros clientes</h2>
             <div class="testimonio-container">
@@ -66,14 +88,13 @@
             </div>
         </section>
     </main>
-    
+
     <footer>
         <div class="footer-container">
             <div class="footer-section">
                 <h3>Sobre Nosotros</h3>
                 <p>Somos una tienda en línea dedicada a ofrecer productos de alta calidad a precios competitivos.</p>
             </div>
-            <br> 
             <div class="footer-section">
                 <h3>Enlaces Rápidos</h3>
                 <ul>
@@ -82,7 +103,6 @@
                     <li><a href="contacto.php">Contáctanos</a></li>
                 </ul>
             </div>
-            <br> 
             <div class="footer-section">
                 <h3>Síguenos</h3>
                 <div class="social-links">
@@ -90,6 +110,8 @@
                     <a href="#">Twitter</a>
                     <a href="#">Instagram</a>
                 </div>
+                <br>
+                <a href="contacto.php" class="btn" style="background-color: #ffcc80; color: #1f3b73;">¿Necesitas ayuda?</a>
             </div>
         </div>
         <p>&copy; 2025 Tienda Online</p>
