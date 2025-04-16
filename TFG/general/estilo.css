@@ -85,10 +85,10 @@ main {
 
 .productos-container, .categoria-container, .testimonio-container {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 .producto img {
