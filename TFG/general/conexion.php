@@ -1,16 +1,12 @@
 <?php
-
 $host = "localhost";
 $usuario = "root";
-$contrasena = "";
-$basededatos = "tienda_online";
+$contrasena = ""; 
+$base_de_datos = "tienda online";
 
-$conexion = new mysqli($host, $usuario, $contrasena, $basededatos);
+$conexion = new mysqli($host, $usuario, $contrasena, $base_de_datos);
 
 if ($conexion->connect_error) {
-    die("❌ Conexión fallida: " . $conexion->connect_error);
+    die("Conexión fallida: " . $conexion->connect_error);
 }
-
-$conexion->set_charset("utf8mb4");
-
 ?>

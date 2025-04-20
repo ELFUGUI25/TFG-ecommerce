@@ -57,13 +57,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <body>
     <div class="registro-container">
         <h1 class="titulo">Registro de Usuario</h1>
-        <form action="procesar_registro.php" method="POST" class="formulario">
-            <input type="text" name="nombre" placeholder="Nombre completo" required>
-            <input type="email" name="email" placeholder="Correo electrónico" required>
-            <input type="password" name="contrasena" placeholder="Contraseña" required>
-            <input type="password" name="confirmar_contrasena" placeholder="Confirmar contraseña" required>
-            <button type="submit">Registrarse</button>
-        </form>
+        <form action="procesar_registro.php" method="POST">
+    <input type="text" name="nombre" placeholder="Nombre completo" required>
+    <input type="email" name="correo" placeholder="Correo electrónico" required>
+    <input type="password" name="contrasena" placeholder="Contraseña" required>
+    <input type="password" name="confirmar" placeholder="Confirmar contraseña" required>
+    <button type="submit">Registrarse</button>
+</form>
+
+</form>
+
         <p class="volver">¿Ya tienes una cuenta? <a href="login.php">Inicia sesión aquí</a></p>
     </div>
 </body>
