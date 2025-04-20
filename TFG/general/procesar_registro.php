@@ -1,6 +1,9 @@
 <?php
-// 1. Incluimos la conexión
-include '../conexion.php'; // Ajusta la ruta si es distinta
+include 'conexion.php'; 
+
+if (!$conexion) {
+    die("Error al conectar con la base de datos.");
+}
 
 // 2. Comprobamos si se ha enviado el formulario
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -31,10 +34,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt->bind_param("sss", $nombre, $correo, $hashed_password);
 
         if ($stmt->execute()) {
-            echo "<script>alert('Registro exitoso. ¡Bienvenido!'); window.location.href='../web.html';</script>";
+            $exito = "✅ Registro exitoso. Ya puedes iniciar sesión.";
         } else {
-            echo "<script>alert('Error al registrar. Intenta más tarde.'); window.history.back();</script>";
+            $errores = "Error al registrar. Detalle: " . $stmt->error;
         }
+        
 
         $stmt->close();
     } else {
