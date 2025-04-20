@@ -5,117 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda Online</title>
     <link rel="stylesheet" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="logo">Tienda Online</div>
-        <nav>
-            <ul>
-                <li><a href="index.php">Inicio</a></li>
-                <li><a href="catalogo.php">Catálogo</a></li>
-                <li><a href="carrito.php">Carrito</a></li>
-                <li><a href="contacto.php">Contacto</a></li>
-                <li><a href="login.php">Iniciar Sesión</a></li>
-                <li><a href="registro.php">Registro</a></li>
-            </ul>
-        </nav>
+        <div class="contenedor-header">
+            <div class="logo">TiendaOnline</div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="login.php">Iniciar Sesión</a></li>
+                    <li><a href="registro.php" class="registro">Regístrate</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <!-- Banner principal -->
-        <section class="banner">
-            <h1>Bienvenido a nuestra Tienda Online</h1>
-            <p>Encuentra los mejores productos al mejor precio</p>
-            <a href="catalogo.php" class="btn">Explorar Catálogo</a>
-        </section>
+    <section class="hero" id="inicio">
+        <div class="contenido-hero">
+            <h1>Bienvenido a <span>TiendaOnline</span></h1>
+            <p>Donde encuentras calidad, estilo y los mejores precios</p>
+            <a href="#catalogo" class="btn">Explorar Catálogo</a>
+        </div>
+    </section>
 
-        <!-- Barra de búsqueda -->
-        <section class="busqueda" style="text-align: center; margin-top: 2rem;">
-            <form action="buscar.php" method="GET">
-                <input type="text" name="q" placeholder="Buscar productos..." style="padding: 0.5rem; width: 60%; max-width: 400px; border-radius: 6px; border: 1px solid #ccc;">
-                <button type="submit" class="btn" style="margin-left: 1rem;">Buscar</button>
-            </form>
-        </section>
-
-        <!-- Productos Destacados -->
-        <section class="destacados">
-            <h2>Productos Destacados</h2>
-            <div class="productos-container">
-                <!-- Tarjetas de ejemplo -->
-                <div class="producto">
-                    <img src="auricularesb.jpg" alt="Producto 1">
-                    <h3>Auriculares Bluetooth</h3>
-                    <p>29.99€</p>
-                    <a href="carrito.php" class="btn">Agregar al carrito</a>
-                </div>
-                <div class="producto">
-                    <img src="sudaderazoro.jpg" alt="Producto 2">
-                    <h3>Sudadera Urbana</h3>
-                    <p>39.99€</p>
-                    <a href="carrito.php" class="btn">Agregar al carrito</a>
-                </div>
-                <div class="producto">
-                    <img src="kitcocina.jpg" alt="Producto 3">
-                    <h3>Pack Cocina Pro</h3>
-                    <p>59.99€</p>
-                    <a href="carrito.php" class="btn">Agregar al carrito</a>
-                </div>
+    <section class="catalogo" id="catalogo">
+        <h2>Productos Destacados</h2>
+        <div class="productos">
+            <div class="producto">
+                <img src="auricularesb.jpg" alt="Producto 1">
+                <h3>Auriculares</h3>
+                <p class="precio">49.99€</p>
+                <button class="btn">Comprar</button>
             </div>
-        </section>
-
-        <!-- Categorías -->
-        <section class="categorias">
-            <h2>Categorías Populares</h2>
-            <div class="categoria-container">
-                <div class="categoria"><a href="#">Electrónica</a></div>
-                <div class="categoria"><a href="#">Ropa</a></div>
-                <div class="categoria"><a href="#">Hogar</a></div>
-                <div class="categoria"><a href="#">Deportes</a></div>
+            <div class="producto">
+                <img src="sudaderazoro.jpg" alt="Producto 2">
+                <h3>Sudadera Moderna</h3>
+                <p class="precio">39.99€</p>
+                <button class="btn">Comprar</button>
             </div>
-        </section>
-
-        <!-- Testimonios -->
-        <section class="testimonios">
-            <h2>Lo que dicen nuestros clientes</h2>
-            <div class="testimonio-container">
-                <div class="testimonio">
-                    <p>"Excelente tienda, productos de calidad y envíos rápidos."</p>
-                    <span>- Juan Pérez</span>
-                </div>
-                <div class="testimonio">
-                    <p>"Me encanta la atención al cliente, siempre atentos y dispuestos a ayudar."</p>
-                    <span>- María Gómez</span>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>Sobre Nosotros</h3>
-                <p>Somos una tienda en línea dedicada a ofrecer productos de alta calidad a precios competitivos.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Enlaces Rápidos</h3>
-                <ul>
-                    <li><a href="politica.php">Política de Privacidad</a></li>
-                    <li><a href="terminos.php">Términos y Condiciones</a></li>
-                    <li><a href="contacto.php">Contáctanos</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Síguenos</h3>
-                <div class="social-links">
-                    <a href="#">Facebook</a>
-                    <a href="#">Twitter</a>
-                    <a href="#">Instagram</a>
-                </div>
-                <br>
-                <a href="contacto.php" class="btn" style="background-color: #ffcc80; color: #1f3b73;">¿Necesitas ayuda?</a>
+            <div class="producto">
+                <img src="kitcocina.jpg" alt="Producto 3">
+                <h3>Kit Cocina </h3>
+                <p class="precio">59.99€</p>
+                <button class="btn">Comprar</button>
             </div>
         </div>
-        <p>&copy; 2025 Tienda Online</p>
+    </section>
+
+    <section class="contacto" id="contacto">
+        <h2>Contacto</h2>
+        <form>
+            <input type="text" placeholder="Tu nombre">
+            <input type="email" placeholder="Tu correo">
+            <textarea placeholder="Tu mensaje"></textarea>
+            <button class="btn">Enviar Mensaje</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 TiendaOnline. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>

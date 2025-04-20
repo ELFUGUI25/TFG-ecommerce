@@ -50,27 +50,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Registro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Tienda Online</title>
     <link rel="stylesheet" href="registro.css">
 </head>
 <body>
-    <div class="form-container">
-        <h2>Registro de Usuario</h2>
-
-        <?php if ($errores): ?>
-            <div class="error"><?= $errores ?></div>
-        <?php elseif ($exito): ?>
-            <div class="exito"><?= $exito ?></div>
-        <?php endif; ?>
-
-        <form action="registro.php" method="POST">
+    <div class="registro-container">
+        <h1 class="titulo">Registro de Usuario</h1>
+        <form action="procesar_registro.php" method="POST" class="formulario">
             <input type="text" name="nombre" placeholder="Nombre completo" required>
-            <input type="email" name="correo" placeholder="Correo electrónico" required>
+            <input type="email" name="email" placeholder="Correo electrónico" required>
             <input type="password" name="contrasena" placeholder="Contraseña" required>
-            <input type="password" name="confirmar" placeholder="Confirmar contraseña" required>
+            <input type="password" name="confirmar_contrasena" placeholder="Confirmar contraseña" required>
             <button type="submit">Registrarse</button>
         </form>
-        <p>¿Ya tienes cuenta? <a href="login.php">Inicia sesión aquí</a>.</p>
+        <p class="volver">¿Ya tienes una cuenta? <a href="login.php">Inicia sesión aquí</a></p>
     </div>
 </body>
 </html>
+

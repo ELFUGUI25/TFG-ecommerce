@@ -1,103 +1,92 @@
-/* Fondo general con imagen */
+/* registro.css */
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: url('comercio.jpg') no-repeat center center fixed;
-    background-size: cover;
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('f711f96b-0421-4937-a917-22aaa9988b0d.png') no-repeat center center fixed;
+    background-size: cover;
     display: flex;
-    align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    align-items: center;
+    height: 100vh;
+    backdrop-filter: brightness(0.8);
 }
 
-/* Contenedor principal del formulario */
 .registro-container {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 2.5rem 3rem;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem 3rem;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 420px;
-    animation: fadeIn 0.6s ease-in-out;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.registro-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-}
-
-/* Título */
-.registro-container h2 {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     text-align: center;
-    color: #1a237e;
-    margin-bottom: 1.8rem;
+    max-width: 400px;
+    width: 100%;
+    animation: slideIn 0.8s ease-out;
 }
 
-/* Campos de entrada */
-.registro-container input[type="text"],
-.registro-container input[type="email"],
-.registro-container input[type="password"],
-.registro-container select {
+h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #333;
+    background: linear-gradient(90deg, #7f5af0, #2cb67d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
     width: 100%;
     padding: 0.8rem;
-    margin-bottom: 1.2rem;
-    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+    border: none;
     border-radius: 12px;
-    transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
-    background-color: #f9f9f9;
+    background-color: #f0f0f0;
+    transition: 0.3s ease;
+    font-size: 1rem;
 }
 
-.registro-container input:focus,
-.registro-container select:focus {
-    border-color: #42a5f5;
-    box-shadow: 0 0 8px rgba(66, 165, 245, 0.5);
+input:focus {
     outline: none;
+    background-color: #e0e0ff;
     transform: scale(1.02);
 }
 
-/* Botón de registro */
-.registro-container button {
+button {
     width: 100%;
-    padding: 0.8rem;
-    background: linear-gradient(to right, #42a5f5, #1e88e5);
+    padding: 0.9rem;
+    background: linear-gradient(135deg, #ff6ec4, #7873f5);
     color: white;
-    font-weight: bold;
     border: none;
-    border-radius: 12px;
+    border-radius: 14px;
     font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
-    transition: background 0.4s ease, transform 0.2s;
-    box-shadow: 0 4px 12px rgba(66, 165, 245, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.registro-container button:hover {
-    background: linear-gradient(to right, #1e88e5, #1565c0);
-    transform: scale(1.03);
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(255, 110, 196, 0.7);
 }
 
-/* Enlace de volver */
-.registro-container .volver {
+.volver {
     display: block;
-    margin-top: 1.2rem;
-    text-align: center;
-    font-size: 0.95rem;
-    color: #1e88e5;
+    margin-top: 1rem;
     text-decoration: none;
-    transition: color 0.3s ease;
+    color: #5f6c7b;
+    font-size: 0.95rem;
+    transition: color 0.3s;
 }
 
-.registro-container .volver:hover {
-    color: #0d47a1;
-    text-decoration: underline;
+.volver:hover {
+    color: #3d9acc;
 }
 
-/* Animación de entrada */
-@keyframes fadeIn {
+@keyframes slideIn {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(-20px);
     }
     to {
         opacity: 1;
