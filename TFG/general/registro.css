@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: url('f711f96b-0421-4937-a917-22aaa9988b0d.png') no-repeat center center fixed;
+    background: url('comercio.jpg') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -29,7 +29,6 @@ h2 {
     font-size: 2rem;
     color: #333;
     background: linear-gradient(90deg, #7f5af0, #2cb67d);
-    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 

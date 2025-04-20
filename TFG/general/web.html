@@ -1,72 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Tienda Online</title>
-    <link rel="stylesheet" href="estilo.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css" />
 </head>
 <body>
     <header>
-        <div class="contenedor-header">
-            <div class="logo">TiendaOnline</div>
-            <nav>
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#catalogo">Catálogo</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                    <li><a href="login.php">Iniciar Sesión</a></li>
-                    <li><a href="registro.php" class="registro">Regístrate</a></li>
-                </ul>
-            </nav>
-        </div>
+        <div class="logo">Tienda Online</div>
+        <nav>
+            <ul>
+                <li><a href="web.html">Inicio</a></li>
+                <li><a href="catalogo.php">Catálogo</a></li>
+                <li><a href="registro.php">Registro</a></li>
+                <li><a href="login.php">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section class="hero" id="inicio">
-        <div class="contenido-hero">
-            <h1>Bienvenido a <span>TiendaOnline</span></h1>
-            <p>Donde encuentras calidad, estilo y los mejores precios</p>
-            <a href="#catalogo" class="btn">Explorar Catálogo</a>
-        </div>
-    </section>
-
-    <section class="catalogo" id="catalogo">
-        <h2>Productos Destacados</h2>
-        <div class="productos">
-            <div class="producto">
-                <img src="auricularesb.jpg" alt="Producto 1">
-                <h3>Auriculares</h3>
-                <p class="precio">49.99€</p>
-                <button class="btn">Comprar</button>
-            </div>
-            <div class="producto">
-                <img src="sudaderazoro.jpg" alt="Producto 2">
-                <h3>Sudadera Moderna</h3>
-                <p class="precio">39.99€</p>
-                <button class="btn">Comprar</button>
-            </div>
-            <div class="producto">
-                <img src="kitcocina.jpg" alt="Producto 3">
-                <h3>Kit Cocina </h3>
-                <p class="precio">59.99€</p>
-                <button class="btn">Comprar</button>
-            </div>
-        </div>
-    </section>
-
-    <section class="contacto" id="contacto">
-        <h2>Contacto</h2>
-        <form>
-            <input type="text" placeholder="Tu nombre">
-            <input type="email" placeholder="Tu correo">
-            <textarea placeholder="Tu mensaje"></textarea>
-            <button class="btn">Enviar Mensaje</button>
-        </form>
-    </section>
+    <main class="hero">
+        <h1>Bienvenido a nuestra Tienda Online</h1>
+        <p>Explora productos únicos, ofertas increíbles y la mejor experiencia de compra en línea.</p>
+        <a href="catalogo.php" class="btn">Explorar Catálogo</a>
+    </main>
 
     <footer>
-        <p>&copy; 2025 TiendaOnline. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Tienda Online. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
