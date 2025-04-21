@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #b3cde0, #decbe4);
+    background: linear-gradient(135deg, #ffffff, #d5f4fd);
     color: #ffffff;
     min-height: 100vh;
 }
@@ -50,7 +50,6 @@ nav a:hover {
     transform: scale(1.05);
 }
 
-/* Hero Section */
 .hero {
     padding: 6rem 2rem;
     text-align: center;
@@ -69,19 +68,19 @@ nav a:hover {
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: #fff3f3;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    color: #5c5c5c;
+    text-shadow: 2px 2px 4px rgba(255, 96, 242, 0.3);
 }
 
 .hero p {
     font-size: 1.3rem;
     margin-bottom: 2rem;
-    color: #f0f0f0;
+    color: #c0bebe;
     max-width: 600px;
     line-height: 1.6;
+    text-shadow: 2px 2px 4px rgba(255, 96, 242, 0.3);
 }
 
-/* Botón */
 .btn {
     background: #f7b2d9;
     color: #ffffff;
@@ -100,7 +99,6 @@ nav a:hover {
     transform: scale(1.05);
 }
 
-/* Footer */
 footer {
     background: rgba(38, 70, 83, 0.8);
     padding: 1rem;
