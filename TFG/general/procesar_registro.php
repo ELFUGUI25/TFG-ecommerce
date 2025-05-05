@@ -7,6 +7,7 @@ if (!$conexion) {
 
 // 2. Comprobamos si se ha enviado el formulario
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    
     // 3. Recogemos y limpiamos los datos del formulario
     $nombre = trim($_POST['nombre'] ?? '');
     $correo = trim($_POST['correo'] ?? '');

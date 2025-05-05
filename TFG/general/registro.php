@@ -18,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } elseif ($contrasena !== $confirmar) {
         $errores = "Las contraseñas no coinciden.";
     } else {
+        
         // Verificar si el correo ya existe
         $stmt = $conexion->prepare("SELECT id FROM usuarios WHERE correo = ?");
         $stmt->bind_param("s", $correo);
@@ -27,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if ($stmt->num_rows > 0) {
             $errores = "Este correo ya está registrado.";
         } else {
+
             // Encriptar contraseña
             $hash = password_hash($contrasena, PASSWORD_DEFAULT);
 
