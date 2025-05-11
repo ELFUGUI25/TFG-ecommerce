@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to right, #1f1c2c, #928dab);
+    background: url('iniciosesion.jpg') no-repeat center center fixed;
     display: flex;
     justify-content: center;
     align-items: center;
