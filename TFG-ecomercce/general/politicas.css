@@ -1,0 +1,124 @@
+/* Fuente profesional y moderna */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa, #e2e8f0);
+    color: #1e293b;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+header.top-bar {
+    background: linear-gradient(90deg, #1e2a38, #25384d);
+    padding: 1.5rem 3rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #e0e0e0;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover,
+nav a.activo {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #66d9ef;
+    transform: translateY(-1px);
+}
+
+main.contenido {
+    flex-grow: 1;
+    max-width: 900px;
+    margin: 2rem auto 4rem;
+    background: #fff;
+    padding: 2.5rem 3rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    line-height: 1.6;
+    color: #334155;
+}
+
+main.contenido h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.8rem;
+    color: #2563eb;
+    text-align: center;
+}
+
+main.contenido h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 1.6rem;
+    margin-bottom: 0.8rem;
+    color: #1e293b;
+}
+
+main.contenido p,
+main.contenido ul {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+main.contenido ul {
+    padding-left: 1.5rem;
+    list-style-type: disc;
+}
+
+main.contenido ul li {
+    margin-bottom: 0.5rem;
+}
+
+main.contenido a {
+    color: #3b82f6;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+main.contenido a:hover,
+main.contenido a:focus {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+footer {
+    background: #1e293b;
+    color: #cbd5e1;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
