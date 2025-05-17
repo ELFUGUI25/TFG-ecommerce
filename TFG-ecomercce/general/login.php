@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header>
 
     <main>
-       <form action="/TFG-ecomercce/general/login-registro-logout/login.php" method="POST" class="formulario">
+        <form action="login.php" method="POST" class="formulario">
             <input type="text" name="usuario" placeholder="Correo o Nombre de Usuario" required>
             <input type="password" name="contrasena" placeholder="Contraseña" required>
             <button type="submit" class="boton">Entrar</button>
@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php if ($mensaje): ?>
             <p style="margin-top: 1rem;"><?php echo $mensaje; ?></p>
         <?php endif; ?>
-        <a href="/TFG-ecomercce/general/web.php" style="color:rgb(247, 184, 135)">← Volver al inicio</a>
+        <p><a href="web.php" style="color:rgb(247, 184, 135)">← Volver al inicio</a></p>
     </main>
 
     <footer>
