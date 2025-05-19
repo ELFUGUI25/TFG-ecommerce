@@ -24,7 +24,7 @@
             </p>
             <ul>
                 <li>🛒 Productos organizados por categorías.</li>
-                <li>📦 Gestión automática de stock e inventario.</li>
+                <li>📦 Gestión de stock e inventario.</li>
                 <li>🤖 Recomendaciones personalizadas según tus gustos y compras.</li>
                 <li>🔒 Compras seguras con pasarelas como PayPal </li>
                 <li>📈 Panel de administración para gestionar todo en segundos.</li>
