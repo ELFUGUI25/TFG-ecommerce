@@ -1,5 +1,5 @@
 <?php
-require_once 'conexion.php';
+require_once '../includes/conexion.php';
 
 $mensaje = "";
 
@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Registro - Mi Tienda Online</title>
-    <link rel="stylesheet" href="registro.css">
+    <link rel="stylesheet" href="../css/registro.css">
 </head>
 <body>
     <header>

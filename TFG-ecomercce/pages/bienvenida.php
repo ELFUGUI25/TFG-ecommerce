@@ -8,7 +8,7 @@ if (!isset($_SESSION['nombre_usuario'])) {
 }
 
 // Conexión a la base de datos
-require_once 'conexion.php';
+require_once '../includes/conexion.php';
 
 // Inicializar variables mensajes
 $mensaje_exito = '';
@@ -65,7 +65,7 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <title>Panel de Usuario - Mi Tienda Online</title>
-    <link rel="stylesheet" href="bienvenida.css">
+    <link rel="stylesheet" href="../css/bienvenida.css">
 </head>
 <body>
     <header class="top-bar">

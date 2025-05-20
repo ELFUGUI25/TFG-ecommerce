@@ -1,5 +1,5 @@
 <?php
-require_once 'conexion.php';
+require_once '../includes/conexion.php';
 
 // Consulta simplificada para obtener productos
 $query = "SELECT id_producto, nombre, descripcion, precio, stock, imagen, tallas FROM productos ORDER BY nombre ASC";
@@ -11,7 +11,7 @@ $resultado = $conn->query($query);
 <head>
     <meta charset="UTF-8">
     <title>Catálogo - Mi Tienda Online</title>
-    <link rel="stylesheet" href="catalogo.css">
+    <link rel="stylesheet" href="../css/catalogo.css">
 </head>
 <body>
     <header class="top-bar">

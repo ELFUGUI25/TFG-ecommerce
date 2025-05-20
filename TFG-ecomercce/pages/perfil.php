@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "conexion.php";
+require_once "../includes/conexion.php";
 
 // Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['id_usuario'])) {
@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Mi Perfil</title>
-    <link rel="stylesheet" href="perfil.css">
+    <link rel="stylesheet" href="../css/perfil.css">
 </head>
 <body>
     <div class="top-bar">
@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <nav>
             <a href="bienvenida.php" class="nav-btn">Inicio</a>
             <a href="catalogo.php" class="nav-btn">Catálogo</a>
-            <a href="logout.php" class="nav-btn">Cerrar sesión</a>
+            <a href="../includes/logout.php" class="nav-btn">Cerrar sesión</a>
         </nav>
     </div>
     
@@ -88,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php endif; ?>
 
         <a href="bienvenida.php" class="boton-volver">Volver al inicio</a>
-        <a href="logout.php" class="boton-salir">Cerrar sesión</a>
+        <a href="../includes/logout.php" class="boton-salir">Cerrar sesión</a>
     </main>
 
     <footer>
