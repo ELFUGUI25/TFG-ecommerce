@@ -1,5 +1,5 @@
 <?php
-require_once '../otros/conexion.php';
+require_once '../includes/conexion.php';
 
 $mensaje = "";
 

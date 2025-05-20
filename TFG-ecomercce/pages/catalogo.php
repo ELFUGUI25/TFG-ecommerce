@@ -1,5 +1,5 @@
 <?php
-require_once '../otros/conexion.php';
+require_once '../includes/conexion.php';
 
 // Consulta simplificada para obtener productos
 $query = "SELECT id_producto, nombre, descripcion, precio, stock, imagen, tallas FROM productos ORDER BY nombre ASC";

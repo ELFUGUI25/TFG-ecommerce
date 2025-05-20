@@ -8,7 +8,7 @@ if (!isset($_SESSION['nombre_usuario'])) {
 }
 
 // Conexión a la base de datos
-require_once '../otros/conexion.php';
+require_once '../includes/conexion.php';
 
 // Inicializar variables mensajes
 $mensaje_exito = '';
