@@ -11,13 +11,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!empty($nombre) && !empty($nombre_usuario) && !empty($correo) && !empty($contrasena)) {
         // Verificar si ya existe ese correo
-        $check = $conn->prepare("SELECT id_usuario FROM usuarios WHERE correo = ?");
-        $check->bind_param("s", $correo);
-        $check->execute();
-        $check->store_result();
+        $checkCorreo = $conn->prepare("SELECT id_usuario FROM usuarios WHERE correo = ?");
+        $checkCorreo->bind_param("s", $correo);
+        $checkCorreo->execute();
+        $checkCorreo->store_result();
 
-        if ($check->num_rows > 0) {
+        // Verificar si ya existe ese nombre de usuario
+        $checkUsuario = $conn->prepare("SELECT id_usuario FROM usuarios WHERE nombre_usuario = ?");
+        $checkUsuario->bind_param("s", $nombre_usuario);
+        $checkUsuario->execute();
+        $checkUsuario->store_result();
+
+        if ($checkCorreo->num_rows > 0) {
             $mensaje = "⚠️ Ya existe una cuenta con ese correo.";
+        } elseif ($checkUsuario->num_rows > 0) {
+            $mensaje = "⚠️ Ya existe una cuenta con ese nombre de usuario.";
         } else {
             // Encriptar contraseña y registrar usuario
             $contrasena_hash = password_hash($contrasena, PASSWORD_DEFAULT);
@@ -31,10 +39,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             $stmt->close();
         }
-        $check->close();
+
+        $checkCorreo->close();
+        $checkUsuario->close();
     } else {
         $mensaje = "⚠️ Todos los campos son obligatorios.";
     }
+
     $conn->close();
 }
 ?>

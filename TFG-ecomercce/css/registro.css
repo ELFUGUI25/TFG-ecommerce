@@ -3,7 +3,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: url('fondoregis.jpg') no-repeat center center / cover;
+    background: url('../assets/images/fondoregis.jpg') no-repeat center center / cover;
     color: #333;
     background-attachment: fixed;
 }

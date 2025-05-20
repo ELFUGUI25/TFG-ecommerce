@@ -2,7 +2,7 @@
 @import 'common.css';
 
 body {
-    background: url('fondologin.jpg') no-repeat center center/cover;
+    background: url('../assets/images/fondologin.jpeg') no-repeat center center/cover;
     min-height: 100vh;
     display: flex;
     flex-direction: column;

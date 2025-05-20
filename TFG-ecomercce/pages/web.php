@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Tienda Online</title>
-    <link rel="stylesheet" href="web.css">
+    <link rel="stylesheet" href="../css/web.css">
 </head>
 <body>
     <header>

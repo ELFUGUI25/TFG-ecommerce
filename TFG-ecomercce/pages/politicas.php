@@ -14,7 +14,7 @@ if (!isset($_SESSION['nombre_usuario'])) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Políticas de Privacidad y Uso - Mi Tienda Online</title>
-    <link rel="stylesheet" href="politicas.css" />
+    <link rel="stylesheet" href="../css/politicas.css" />
 </head>
 <body>
     <header class="top-bar">
