@@ -2,7 +2,7 @@
 @import 'common.css';
 
 body {
-    background: url('../assets/images/fondoperfil.jpg') no-repeat center center fixed;
+    background: url('../assets/images/.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #333;
 }
