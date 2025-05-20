@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "../includes/conexion.php";
+require_once "../otros/conexion.php";
 
 // Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['id_usuario'])) {
