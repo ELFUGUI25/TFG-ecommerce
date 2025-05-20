@@ -9,10 +9,9 @@ if (!isset($_SESSION['id_usuario'])) {
 }
 
 $mensaje = "";
-
-// Obtener datos actuales del usuario
 $id_usuario = $_SESSION['id_usuario'];
 
+// Obtener datos actuales del usuario
 $sql = "SELECT nombre_usuario, correo FROM usuarios WHERE id_usuario = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $id_usuario);
@@ -31,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nuevo_correo = $_POST['correo'];
     $nueva_contrasena = $_POST['contrasena'];
 
+    // Actualizar perfil con o sin cambio de contraseña
     if (!empty($nueva_contrasena)) {
         $hash_contrasena = password_hash($nueva_contrasena, PASSWORD_DEFAULT);
         $sql_update = "UPDATE usuarios SET nombre_usuario = ?, correo = ?, contrasena = ? WHERE id_usuario = ?";
@@ -61,13 +61,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <div class="top-bar">
-    <h1>Mi Perfil</h1>
-    <nav>
-        <a href="bienvenida.php" class="nav-btn">Inicio</a>
-        <a href="catalogo.php" class="nav-btn">Catálogo</a>
-        <a href="logout.php" class="nav-btn">Cerrar sesión</a>
-    </nav>
-</div>
+        <h1>Mi Perfil</h1>
+        <nav>
+            <a href="bienvenida.php" class="nav-btn">Inicio</a>
+            <a href="catalogo.php" class="nav-btn">Catálogo</a>
+            <a href="logout.php" class="nav-btn">Cerrar sesión</a>
+        </nav>
+    </div>
+    
     <main>
         <form method="POST" class="formulario">
             <label>Nombre de usuario:</label>

@@ -1,6 +1,7 @@
 <?php
 require_once 'conexion.php';
 
+// Consulta simplificada para obtener productos
 $query = "SELECT id_producto, nombre, descripcion, precio, stock, imagen, tallas FROM productos ORDER BY nombre ASC";
 $resultado = $conn->query($query);
 ?>
@@ -9,18 +10,19 @@ $resultado = $conn->query($query);
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <header class="top-bar">
-    <h1>Mi Tienda Online</h1>
-    <nav>
-        <a href="bienvenida.php" class="nav-btn <?php echo basename($_SERVER['PHP_SELF']) == 'bienvenida.php' ? 'activo' : ''; ?>">Inicio</a>
-        <a href="catalogo.php" class="nav-btn <?php echo basename($_SERVER['PHP_SELF']) == 'catalogo.php' ? 'activo' : ''; ?>">Catálogo</a>
-        <a href="perfil.php" class="nav-btn <?php echo basename($_SERVER['PHP_SELF']) == 'perfil.php' ? 'activo' : ''; ?>">Mi Perfil</a>
-        <a href="politicas.php" class="nav-btn <?php echo basename($_SERVER['PHP_SELF']) == 'politicas.php' ? 'activo' : ''; ?>">Políticas</a>
-    </nav>
-</header>
+    <title>Catálogo - Mi Tienda Online</title>
     <link rel="stylesheet" href="catalogo.css">
 </head>
 <body>
+    <header class="top-bar">
+        <h1>Mi Tienda Online</h1>
+        <nav>
+            <a href="bienvenida.php" class="nav-btn">Inicio</a>
+            <a href="catalogo.php" class="nav-btn activo">Catálogo</a>
+            <a href="perfil.php" class="nav-btn">Mi Perfil</a>
+            <a href="politicas.php" class="nav-btn">Políticas</a>
+        </nav>
+    </header>
 
     <main class="catalogo">
         <?php if ($resultado && $resultado->num_rows > 0): ?>
@@ -42,5 +44,9 @@ $resultado = $conn->query($query);
             <p>No hay productos disponibles en este momento.</p>
         <?php endif; ?>
     </main>
+    
+    <footer>
+        <p>&copy; <?php echo date("Y"); ?> Mi Tienda Online - Proyecto TFG</p>
+    </footer>
 </body>
 </html>

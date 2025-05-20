@@ -1,5 +1,5 @@
 <?php
-require_once 'conexion.php'; // Conexión a la base de datos
+require_once 'conexion.php';
 
 $mensaje = "";
 
@@ -10,7 +10,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contrasena = trim($_POST["contrasena"]);
 
     if (!empty($nombre) && !empty($nombre_usuario) && !empty($correo) && !empty($contrasena)) {
-
         // Verificar si ya existe ese correo
         $check = $conn->prepare("SELECT id_usuario FROM usuarios WHERE correo = ?");
         $check->bind_param("s", $correo);
@@ -20,8 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($check->num_rows > 0) {
             $mensaje = "⚠️ Ya existe una cuenta con ese correo.";
         } else {
+            // Encriptar contraseña y registrar usuario
             $contrasena_hash = password_hash($contrasena, PASSWORD_DEFAULT);
-
             $stmt = $conn->prepare("INSERT INTO usuarios (nombre, nombre_usuario, correo, contrasena) VALUES (?, ?, ?, ?)");
             $stmt->bind_param("ssss", $nombre, $nombre_usuario, $correo, $contrasena_hash);
 
@@ -30,17 +29,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } else {
                 $mensaje = "❌ Error al registrar: " . $stmt->error;
             }
-
             $stmt->close();
         }
-
         $check->close();
     } else {
         $mensaje = "⚠️ Todos los campos son obligatorios.";
     }
+    $conn->close();
 }
-
-$conn->close();
 ?>
 
 <!DOCTYPE html>

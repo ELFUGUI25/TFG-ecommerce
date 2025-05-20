@@ -1,19 +1,16 @@
 <?php
 session_start();
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 require_once 'conexion.php';
 
 $mensaje = "";
 
+// Procesar formulario de inicio de sesión
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $usuario = trim($_POST["usuario"]); // Puede ser correo o nombre de usuario
+    $usuario = trim($_POST["usuario"]);
     $contrasena = trim($_POST["contrasena"]);
 
     if (!empty($usuario) && !empty($contrasena)) {
+        // Consulta preparada para evitar inyección SQL
         $stmt = $conn->prepare("SELECT id_usuario, nombre_usuario, correo, contrasena FROM usuarios WHERE correo = ? OR nombre_usuario = ?");
         $stmt->bind_param("ss", $usuario, $usuario);
         $stmt->execute();
@@ -21,10 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($resultado->num_rows === 1) {
             $fila = $resultado->fetch_assoc();
-
+            
+            // Verificar contraseña
             if (password_verify($contrasena, $fila["contrasena"])) {
+                // Iniciar sesión
                 $_SESSION["correo"] = $fila["correo"];
-                $_SESSION["id_usuario"] = $fila["id_usuario"]; // 👈 Aquí está el cambio importante
+                $_SESSION["id_usuario"] = $fila["id_usuario"];
                 $_SESSION["nombre_usuario"] = $fila["nombre_usuario"];
                 header("Location: bienvenida.php");
                 exit();
@@ -34,16 +33,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             $mensaje = "❌ El usuario o la contraseña son incorrectos.";
         }
-
         $stmt->close();
     } else {
         $mensaje = "⚠️ Por favor, completa todos los campos.";
     }
-
     $conn->close();
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">

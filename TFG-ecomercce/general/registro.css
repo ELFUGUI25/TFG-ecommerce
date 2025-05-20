@@ -1,21 +1,11 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Estilos específicos para la página de registro */
+@import 'common.css';
 
-/* Fuente y fondo general */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: url('fondoregis.jpg') no-repeat center center / cover;
     color: #333;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
     background-attachment: fixed;
-    margin: 0;
-    animation: fadeInBody 1.5s ease forwards;
 }
 
 .mensaje {
@@ -24,7 +14,7 @@ body {
     margin-top: 10px;
     padding: 10px;
     border-radius: 5px;
-    animation: fadeInMessage 1.5s ease forwards;
+    animation: fadeIn 1.5s ease forwards;
 }
 
 /* Encabezado */
@@ -33,7 +23,7 @@ header {
     padding: 2rem 1rem;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    animation: slideDown 1s ease forwards;
+    animation: fadeInDown 1s ease forwards;
 }
 
 header h1 {
@@ -71,126 +61,20 @@ main {
     animation: fadeInUp 1s ease forwards;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: border 0.3s ease, box-shadow 0.3s ease;
-}
-
-input:focus {
-    outline: none;
-    border-color: #4CAF50;
-    box-shadow: 0 0 8px rgba(76, 175, 80, 0.6);
-    animation: pulseFocus 1.2s ease infinite alternate;
-}
-
-/* Botón */
-.boton {
-    padding: 12px;
-    background-color: #4CAF50;
-    color: white;
-    font-size: 1rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-    animation: fadeInButton 1.5s ease forwards;
-    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.4);
-}
-
-.boton:hover {
-    background-color: #45a049;
-    transform: scale(1.1) rotate(-2deg);
-    box-shadow: 0 8px 14px rgba(69, 160, 73, 0.7);
-}
-
-/* Mensaje de registro */
-main p {
+/* Botones inferiores */
+.botones-inferiores {
     margin-top: 1rem;
-    font-size: 0.95rem;
-    animation: fadeInText 1.6s ease forwards;
+    text-align: center;
 }
 
-/* Enlace para volver */
-main a {
-    margin-top: 1rem;
+.btn-volver {
     color: #ffffff;
     text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-    animation: fadeInLink 1.7s ease forwards;
+    transition: color 0.3s ease;
+    animation: fadeIn 1.7s ease forwards;
 }
 
-main a:hover {
+.btn-volver:hover {
     color: #388e3c;
     text-decoration: underline;
-    transform: scale(1.05);
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
-    color: #fdfdfd;
-    animation: fadeInFooter 1.5s ease forwards;
-}
-
-/* Animaciones keyframes */
-
-@keyframes fadeInBody {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-@keyframes slideDown {
-    from {opacity: 0; transform: translateY(-50px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes fadeInUp {
-    from {opacity: 0; transform: translateY(30px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes fadeInScale {
-    from {opacity: 0; transform: scale(0.95);}
-    to {opacity: 1; transform: scale(1);}
-}
-
-@keyframes pulseFocus {
-    0% {
-        box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
-    }
-    100% {
-        box-shadow: 0 0 15px rgba(76, 175, 80, 0.9);
-    }
-}
-
-@keyframes fadeInButton {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes fadeInText {
-    from {opacity: 0; transform: translateX(-10px);}
-    to {opacity: 1; transform: translateX(0);}
-}
-
-@keyframes fadeInLink {
-    from {opacity: 0; transform: translateY(10px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes fadeInFooter {
-    from {opacity: 0; transform: translateY(10px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes fadeInMessage {
-    from {opacity: 0; transform: scale(0.8);}
-    to {opacity: 1; transform: scale(1);}
 }

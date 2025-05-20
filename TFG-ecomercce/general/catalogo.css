@@ -1,87 +1,10 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition: all 0.3s ease; /* Animación suave para todos los cambios */
-}
+/* Estilos específicos para la página de catálogo */
+@import 'common.css';
 
 body {
-    background: #ffffff; /* Fondo blanco */
+    background: #ffffff;
     color: #333;
     padding: 20px;
-    min-height: 100vh;
-    animation: fadeIn 1s ease forwards;
-}
-
-/* Header */
-header {
-    text-align: center;
-    color: #ffffff;
-    margin-bottom: 30px;
-}
-
-/* Barra superior: ocupa toda la parte superior */
-.top-bar {
-    background: linear-gradient(90deg, #1e2a38, #25384d);
-    padding: 1.5rem 3rem;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    position: fixed;       /* Fijo en la parte superior */
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    font-family: 'Inter', sans-serif;
-    animation: slideDown 0.8s ease forwards; /* Animación al aparecer */
-}
-
-/* Para que el contenido no quede debajo del header fijo */
-body > main, body > header, body > div.top-bar {
-    padding-top: 70px; /* Ajusta según altura real del top-bar */
-}
-
-.top-bar h1 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    letter-spacing: 0.6px;
-    user-select: none;
-    animation: fadeInText 1s ease forwards;
-}
-
-.top-bar nav a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: #e0e0e0;
-    font-weight: 500;
-    padding: 8px 14px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    animation: fadeInText 1.2s ease forwards;
-}
-
-.top-bar nav a:hover,
-.top-bar nav a.activo {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #66d9ef;
-    transform: translateY(-1px);
-}
-
-.btn-volver {
-    display: inline-block;
-    text-decoration: none;
-    color: #2980b9;
-    font-weight: 600;
-    transition: color 0.3s ease;
-    animation: fadeInText 1.5s ease forwards;
-}
-
-.btn-volver:hover {
-    color: #1c5980;
 }
 
 /* Contenedor grid productos */
@@ -92,6 +15,7 @@ body > main, body > header, body > div.top-bar {
     max-width: 1200px;
     margin: 0 auto;
     animation: fadeIn 1s ease forwards;
+    padding-top: 70px; /* Espacio para la barra superior fija */
 }
 
 /* Card individual */
@@ -100,8 +24,8 @@ body > main, body > header, body > div.top-bar {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
     padding: 1rem;
-    max-width: 300px;       /* Limita el ancho máximo */
-    margin: 0 auto;         /* Centrar horizontalmente */
+    max-width: 300px;
+    margin: 0 auto;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     display: flex;
     flex-direction: column;
@@ -129,7 +53,7 @@ body > main, body > header, body > div.top-bar {
 /* Nombre */
 .producto-nombre {
     font-size: 1.5rem;
-    color: #0b1a39; /* Azul oscuro para nombre en catálogo */
+    color: #0b1a39;
     margin-bottom: 10px;
     font-weight: 700;
     animation: fadeInText 1.3s ease forwards;
@@ -162,48 +86,8 @@ body > main, body > header, body > div.top-bar {
 }
 
 /* Stock */
-.producto-stock {
+.producto-cantidad {
     font-size: 0.95rem;
     font-weight: 600;
     color: #e74c3c;
-}
-
-/* Disponible */
-.producto-stock:contains("Disponible") {
-    color: #27ae60;
-}
-
-/* Título del catálogo en azul oscuro */
-.catalogo-titulo {
-    color: #0b1a39;  /* Azul oscuro */
-    font-weight: 700;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    animation: fadeInText 1.3s ease forwards;
-}
-
-/* Texto "Mi Tienda Online" en blanco */
-footer p {
-    color: #ffffff;
-}
-
-/* Animaciones keyframes */
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-@keyframes fadeInText {
-    from {opacity: 0; transform: translateY(10px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes fadeInUp {
-    from {opacity: 0; transform: translateY(30px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes slideDown {
-    from {opacity: 0; transform: translateY(-50px);}
-    to {opacity: 1; transform: translateY(0);}
 }

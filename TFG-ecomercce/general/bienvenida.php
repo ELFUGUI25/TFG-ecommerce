@@ -8,17 +8,9 @@ if (!isset($_SESSION['nombre_usuario'])) {
 }
 
 // Conexión a la base de datos
-$host = "localhost";
-$user = "root";
-$password = ""; // En XAMPP por defecto está vacío
-$database = "tienda_online";
+require_once 'conexion.php';
 
-$conn = new mysqli($host, $user, $password, $database);
-if ($conn->connect_error) {
-    die("❌ Error de conexión a la base de datos: " . $conn->connect_error);
-}
-
-// Inicializar variables mensajes para evitar undefined variable
+// Inicializar variables mensajes
 $mensaje_exito = '';
 $mensaje_error = '';
 
@@ -26,11 +18,12 @@ $mensaje_error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comentario'])) {
     $usuario = $_SESSION['nombre_usuario'];
     $comentario = trim($_POST['comentario']);
+    
     if ($comentario !== '') {
         $stmt = $conn->prepare("INSERT INTO comentarios (usuario, comentario) VALUES (?, ?)");
         $stmt->bind_param("ss", $usuario, $comentario);
+        
         if ($stmt->execute()) {
-            // Guardamos mensaje de éxito en sesión y redirigimos
             $_SESSION['mensaje_exito'] = "Gracias por tu comentario.";
         } else {
             $_SESSION['mensaje_error'] = "Error al guardar tu comentario. Inténtalo de nuevo.";
@@ -40,12 +33,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comentario'])) {
         $_SESSION['mensaje_error'] = "El comentario no puede estar vacío.";
     }
 
-    // Redirigimos a GET para evitar reenvío del formulario
+    // Redirigir para evitar reenvío del formulario
     header("Location: " . $_SERVER['PHP_SELF']);
     exit();
 }
 
-// Recuperar mensajes de sesión (si los hay) y luego borrarlos
+// Recuperar mensajes de sesión
 if (isset($_SESSION['mensaje_exito'])) {
     $mensaje_exito = $_SESSION['mensaje_exito'];
     unset($_SESSION['mensaje_exito']);
@@ -66,7 +59,6 @@ if ($result) {
 }
 $conn->close();
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -184,7 +176,6 @@ $conn->close();
                 <?php endforeach; ?>
             <?php endif; ?>
         </section>
-
     </main>
 
     <footer>

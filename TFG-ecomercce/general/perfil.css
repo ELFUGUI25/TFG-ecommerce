@@ -1,33 +1,10 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Estilos específicos para la página de perfil */
+@import 'common.css';
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: url('fonerfil.jpg') no-repeat center center fixed;
+    background: url('fondoperfil.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #333;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Encabezado */
-header {
-    background-color: rgba(34, 49, 63, 0.9);
-    color: #fff;
-    padding: 2rem;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-header h1 {
-    font-size: 2.2rem;
-    margin-bottom: 0.5rem;
-    letter-spacing: 1px;
 }
 
 /* Contenido principal */
@@ -57,40 +34,6 @@ main {
     margin-bottom: 0.5rem;
     font-weight: 600;
     color: #2c3e50;
-}
-
-.formulario input {
-    width: 100%;
-    padding: 0.9rem;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-size: 1rem;
-    transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-.formulario input:focus {
-    border-color: #3498db;
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
-    outline: none;
-}
-
-/* Botón principal */
-.boton {
-    width: 100%;
-    margin-top: 1.8rem;
-    background-color: #3498db;
-    color: white;
-    padding: 1rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.boton:hover {
-    background-color: #2980b9;
-    transform: translateY(-2px);
 }
 
 /* Mensaje */
@@ -133,90 +76,9 @@ main {
     transform: scale(1.03);
 }
 
-/* Footer */
-footer {
-    background-color: rgba(34, 49, 63, 0.85);
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
-}
-
-/* TOP BAR UNIFICADA */
-.top-bar {
-    background: linear-gradient(90deg, #1e2a38, #25384d);
-    padding: 20px 40px;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    animation: slideFadeIn 0.7s ease-out;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.top-bar h1 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    letter-spacing: 0.6px;
-    animation: fadeInText 1s ease-in-out;
-}
-
-nav .nav-btn {
-    margin-left: 20px;
-    text-decoration: none;
-    color: #e0e0e0;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-}
-
-nav .nav-btn:hover,
-nav .activo {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #66d9ef;
-    transform: translateY(-1px);
-}
-
-/* ANIMACIONES */
-@keyframes slideFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInText {
-    from {
-        opacity: 0;
-        letter-spacing: 2px;
-    }
-    to {
-        opacity: 1;
-        letter-spacing: 0.6px;
-    }
-}
-
-/* Animaciones */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
 /* Responsive */
 @media (max-width: 600px) {
     .formulario {
         padding: 1.5rem 2rem;
-    }
-
-    header h1 {
-        font-size: 1.6rem;
     }
 }

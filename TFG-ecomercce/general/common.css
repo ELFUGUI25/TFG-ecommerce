@@ -1,0 +1,115 @@
+/* Estilos comunes para todas las páginas */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import 'animations.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+/* Barra superior común */
+.top-bar {
+    background: linear-gradient(90deg, #1e2a38, #25384d);
+    padding: 1.5rem 3rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.top-bar h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    user-select: none;
+    animation: fadeInText 1s ease-in-out;
+}
+
+.top-bar nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #e0e0e0;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.top-bar nav a:hover,
+.top-bar nav a.activo {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #66d9ef;
+    transform: translateY(-1px);
+}
+
+/* Estilos comunes para formularios */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    padding: 0.8rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #3b82f6;
+    outline: none;
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
+}
+
+/* Botones comunes */
+.boton {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boton:hover {
+    background-color: #2563eb;
+    transform: scale(1.03);
+}
+
+/* Footer común */
+footer {
+    background: #1e293b;
+    color: #cbd5e1;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+/* Enlaces comunes */
+a {
+    color: #3b82f6;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+a:hover, a:focus {
+    color: #2563eb;
+    text-decoration: underline;
+}

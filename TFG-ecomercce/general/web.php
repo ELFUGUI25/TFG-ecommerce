@@ -1,5 +1,5 @@
 <?php
-// Aquí podrías poner lógica futura de redirección o sesión
+// Archivo simplificado de la página principal
 ?>
 
 <!DOCTYPE html>
@@ -36,9 +36,7 @@
 
         <section class="acciones">
            <a href="registro.php" class="boton">Registrarse</a>
-
-
-            <a href="login.php" class="boton">Iniciar sesión</a>
+           <a href="login.php" class="boton">Iniciar sesión</a>
         </section>
     </main>
 

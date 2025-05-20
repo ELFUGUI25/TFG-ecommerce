@@ -1,22 +1,12 @@
-/* Reset general */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Estilos específicos para la página principal */
+@import 'common.css';
 
-/* Cuerpo */
 body {
-    font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(to right, #f0f0f0, #e0f7fa);
     color: #333;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    animation: fadeInBody 1.5s ease forwards;
 }
 
-/* Encabezado */
+/* Encabezado específico */
 header {
     background-color: #00796B;
     color: white;
@@ -66,14 +56,14 @@ main {
     list-style: none;
     padding-left: 1rem;
     margin: 1rem 0;
-    animation: fadeInList 1.5s ease forwards;
+    animation: fadeInUp 1.5s ease forwards;
 }
 
 .presentacion ul li {
     margin: 0.5rem 0;
     font-size: 1.1rem;
     position: relative;
-    animation: fadeInItem 1.6s ease forwards;
+    animation: fadeInUp 1.6s ease forwards;
 }
 
 .presentacion ul li::before {
@@ -88,7 +78,7 @@ main {
     top: 0;
 }
 
-/* Botones */
+/* Botones específicos */
 .acciones {
     text-align: center;
 }
@@ -103,7 +93,7 @@ main {
     text-decoration: none;
     font-size: 1rem;
     transition: transform 0.3s ease, background-color 0.4s ease, box-shadow 0.3s ease;
-    animation: fadeInButton 1.8s ease forwards;
+    animation: fadeInUp 1.8s ease forwards;
     box-shadow: 0 4px 6px rgba(0, 150, 136, 0.4);
 }
 
@@ -111,67 +101,4 @@ main {
     background-color: #00796B;
     transform: scale(1.1) rotate(-2deg);
     box-shadow: 0 8px 12px rgba(0, 150, 136, 0.7);
-}
-
-/* Pie de página */
-footer {
-    background-color: #004D40;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
-    animation: fadeInFooter 1.5s ease forwards;
-}
-
-/* Animaciones keyframes */
-
-@keyframes fadeInBody {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-@keyframes slideDown {
-    from {opacity: 0; transform: translateY(-50px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes fadeInUp {
-    from {opacity: 0; transform: translateY(30px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes fadeInScale {
-    from {opacity: 0; transform: scale(0.95);}
-    to {opacity: 1; transform: scale(1);}
-}
-
-@keyframes slideInLeft {
-    from {opacity: 0; transform: translateX(-40px);}
-    to {opacity: 1; transform: translateX(0);}
-}
-
-@keyframes fadeInList {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes fadeInItem {
-    0% {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fadeInButton {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes fadeInFooter {
-    from {opacity: 0; transform: translateY(10px);}
-    to {opacity: 1; transform: translateY(0);}
 }
