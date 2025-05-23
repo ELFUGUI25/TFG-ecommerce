@@ -3,7 +3,9 @@ require_once '../includes/conexion.php';
 require_once '../includes/carrito_funciones.php';
 
 // Verificar si el usuario está logueado
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 if (!isset($_SESSION['id_usuario'])) {
     header("Location: login.php");
     exit();
