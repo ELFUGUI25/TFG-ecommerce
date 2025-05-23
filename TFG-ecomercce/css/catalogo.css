@@ -91,3 +91,72 @@ body {
     font-weight: 600;
     color: #e74c3c;
 }
+/* Contenedor de cantidad + botón */
+.form-agregar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Contenedor del input cantidad */
+.cantidad-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: #0b1a39;
+}
+
+/* Input cantidad */
+.input-cantidad {
+    width: 60px;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-align: center;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-cantidad:focus {
+    outline: none;
+    border-color: #27ae60;
+    box-shadow: 0 0 5px rgba(39, 174, 96, 0.4);
+}
+
+/* Botón agregar al carrito */
+.btn-agregar {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    max-width: 200px;
+}
+
+.btn-agregar:hover {
+    background-color: #219150;
+    transform: translateY(-2px);
+}
+
+/* Botón deshabilitado por stock */
+.btn-agotado {
+    background-color: #ccc;
+    color: #666;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: not-allowed;
+    width: 100%;
+    max-width: 200px;
+}
