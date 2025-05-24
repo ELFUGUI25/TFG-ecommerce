@@ -1,0 +1,392 @@
+/* Estilos para la página de mis pedidos */
+
+/* Importar estilos comunes */
+@import url('../css/common.css');
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.top-bar {
+    background-color: #3498db;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.top-bar h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.nav-btn {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-btn.activo {
+    background-color: rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+}
+
+.pedidos-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.pedidos-container h2 {
+    color: #3498db;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.pedidos-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.tab-btn {
+    background-color: transparent;
+    border: none;
+    padding: 1rem 1.5rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #6c757d;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.tab-btn:hover {
+    color: #3498db;
+}
+
+.tab-btn.active {
+    color: #3498db;
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #3498db;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content h3 {
+    color: #3498db;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.pedidos-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.pedido-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pedido-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pedido-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.pedido-header h4 {
+    margin: 0;
+    color: #3498db;
+    font-size: 1.2rem;
+}
+
+.estado {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.estado-pendiente {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.estado-pagado {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.estado-enviado {
+    background-color: #6f42c1;
+    color: white;
+}
+
+.estado-entregado {
+    background-color: #28a745;
+    color: white;
+}
+
+.estado-cancelado {
+    background-color: #dc3545;
+    color: white;
+}
+
+.pedido-info {
+    margin-bottom: 1rem;
+}
+
+.pedido-info p {
+    margin: 0.5rem 0;
+}
+
+.pedido-acciones {
+    text-align: right;
+}
+
+.btn-ver-detalles {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-ver-detalles:hover {
+    background-color: #2980b9;
+}
+
+.no-pedidos {
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #6c757d;
+    font-size: 1.1rem;
+}
+
+/* Estilos para la vista de detalles de pedido */
+.pedido-detalle {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.detalle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.detalle-header h2 {
+    margin: 0;
+    text-align: left;
+}
+
+.btn-volver {
+    display: inline-block;
+    background-color: #f8f9fa;
+    color: #6c757d;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid #6c757d;
+    transition: all 0.3s;
+}
+
+.btn-volver:hover {
+    background-color: #6c757d;
+    color: white;
+}
+
+.detalle-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.info-basica, .info-envio {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.info-basica p, .info-envio p {
+    margin: 0.5rem 0;
+}
+
+.info-envio h3 {
+    margin-top: 0;
+    color: #3498db;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.detalle-productos h3 {
+    color: #3498db;
+    margin-bottom: 1.5rem;
+}
+
+.productos-lista {
+    margin-bottom: 2rem;
+}
+
+.producto-item {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.producto-imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.producto-info h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #3498db;
+}
+
+.producto-info p {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+}
+
+.producto-total {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #3498db;
+}
+
+.detalle-total {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.total-linea {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.total-final {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #dee2e6;
+}
+
+.no-items {
+    text-align: center;
+    padding: 2rem;
+    color: #6c757d;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pedidos-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tab-btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    .detalle-info {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .producto-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .producto-imagen img {
+        width: 100px;
+        margin: 0 auto;
+    }
+    
+    .detalle-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .btn-volver {
+        width: 100%;
+        text-align: center;
+    }
+}
