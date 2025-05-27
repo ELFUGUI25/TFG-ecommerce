@@ -65,6 +65,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <nav>
             <a href="bienvenida.php" class="nav-btn">Inicio</a>
             <a href="catalogo.php" class="nav-btn">Catálogo</a>
+            <a href="carrito.php" class="nav-btn">Mi Carrito</a>
+            <a href="mis_pedidos.php" class="nav-btn">Mis Pedidos</a>
             <a href="../includes/logout.php" class="nav-btn">Cerrar sesión</a>
         </nav>
     </div>
@@ -87,8 +89,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p class="mensaje"><?php echo $mensaje; ?></p>
         <?php endif; ?>
 
-        <a href="bienvenida.php" class="boton-volver">Volver al inicio</a>
-        <a href="../includes/logout.php" class="boton-salir">Cerrar sesión</a>
+        <div class="acciones-usuario">
+            <a href="bienvenida.php" class="boton-accion">Volver al inicio</a>
+            <a href="carrito.php" class="boton-accion boton-carrito">Ver mi carrito</a>
+            <a href="mis_pedidos.php" class="boton-accion boton-pedidos">Ver mis pedidos</a>
+            <a href="../includes/logout.php" class="boton-accion boton-salir">Cerrar sesión</a>
+        </div>
     </main>
 
     <footer>
