@@ -1,15 +1,18 @@
-/* Estilos específicos para la página de registro */
+/* Estilos mejorados para la página de registro */
 @import 'common.css';
 
 body {
-  font-family: var(--font-family-base);
-  background: url('../assets/images/fondoregis.jpg') no-repeat center center / cover;
-  color: var(--color-dark);
-  background-attachment: fixed;
+  background: url('../assets/images/fondoregis.jpg') no-repeat center center/cover;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl);
   position: relative;
+  font-family: var(--font-family);
+  color: var(--color-dark);
+  background-attachment: fixed;
 }
 
 body::before {
@@ -19,47 +22,24 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.4);
   z-index: -1;
-}
-
-.mensaje {
-  color: white;
-  font-weight: var(--font-weight-semibold);
-  margin-top: var(--spacing-md);
-  padding: var(--spacing-sm) var(--spacing-md);
-  border-radius: var(--border-radius-md);
-  animation: fadeIn 1.5s ease forwards;
-}
-
-.mensaje.error {
-  background-color: rgba(var(--color-danger-rgb), 0.2);
-  color: var(--color-danger);
-  border: 1px solid rgba(var(--color-danger-rgb), 0.3);
-}
-
-.mensaje.success {
-  background-color: rgba(var(--color-success-rgb), 0.2);
-  color: var(--color-success);
-  border: 1px solid rgba(var(--color-success-rgb), 0.3);
+  backdrop-filter: blur(5px);
 }
 
 /* Encabezado */
 header {
-  color: white;
-  padding: var(--spacing-xl) var(--spacing-lg);
   text-align: center;
-  box-shadow: var(--shadow-md);
-  animation: fadeInDown 1s ease forwards;
-  position: relative;
-  z-index: 1;
+  margin-bottom: var(--spacing-xl);
+  animation: fadeInDown 1.2s ease forwards;
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
+  color: white;
   margin-bottom: var(--spacing-md);
-  animation: fadeInUp 1.2s ease forwards;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  font-weight: var(--font-weight-bold);
   position: relative;
   display: inline-block;
 }
@@ -70,42 +50,44 @@ header h1::after {
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
+  width: 80px;
   height: 3px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(90deg, var(--color-success), var(--color-primary));
   border-radius: var(--border-radius-full);
 }
 
 header p {
   font-size: 1.1rem;
+  font-weight: var(--font-weight-medium);
   color: rgba(255, 255, 255, 0.9);
-  animation: fadeInUp 1.4s ease forwards;
+  text-align: center;
+  animation: fadeIn 1.4s ease forwards;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   max-width: 600px;
   margin: 0 auto;
 }
 
-/* Formulario */
+/* Contenido principal */
 main {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: var(--spacing-xl);
+  width: 100%;
+  max-width: 500px;
   animation: fadeInScale 1.2s ease forwards;
-  position: relative;
-  z-index: 1;
 }
 
+/* Formulario */
 .formulario {
   background-color: rgba(255, 255, 255, 0.95);
   padding: var(--spacing-xl);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-lg);
   width: 100%;
-  max-width: 500px;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
   animation: fadeInUp 1s ease forwards;
   position: relative;
   overflow: hidden;
@@ -118,48 +100,43 @@ main {
   left: 0;
   width: 100%;
   height: 5px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(90deg, var(--color-success), var(--color-primary));
 }
 
-.form-group {
-  position: relative;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: var(--spacing-sm);
+.formulario label {
   color: var(--color-gray-dark);
   font-weight: var(--font-weight-medium);
-  font-size: 1rem;
-  transition: all var(--transition-fast);
+  margin-bottom: var(--spacing-xs);
+  display: block;
+  font-size: 0.95rem;
 }
 
-.form-control {
+.formulario input {
   width: 100%;
-  padding: var(--spacing-md) var(--spacing-lg);
-  background: white;
+  padding: var(--spacing-md);
   border: 1px solid var(--color-gray-light);
   border-radius: var(--border-radius-md);
+  background-color: white;
   color: var(--color-dark);
   font-size: 1rem;
   transition: all var(--transition-normal);
 }
 
-.form-control:focus {
+.formulario input:focus {
   outline: none;
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.2);
 }
 
-.form-control::placeholder {
+.formulario input::placeholder {
   color: var(--color-gray-medium);
 }
 
-.boton {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+.formulario button {
+  background: linear-gradient(135deg, var(--color-success), #219150);
   color: white;
   border: none;
-  padding: var(--spacing-md) var(--spacing-lg);
+  padding: var(--spacing-md);
   border-radius: var(--border-radius-md);
   font-size: 1rem;
   font-weight: var(--font-weight-semibold);
@@ -168,10 +145,9 @@ main {
   margin-top: var(--spacing-md);
   position: relative;
   overflow: hidden;
-  text-align: center;
 }
 
-.boton::after {
+.formulario button::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -185,7 +161,7 @@ main {
   transition: all 0.6s ease;
 }
 
-.boton:active::after {
+.formulario button:active::after {
   width: 300px;
   height: 300px;
   opacity: 0;
@@ -193,118 +169,204 @@ main {
   transition: all 0s;
 }
 
-.boton:hover {
+.formulario button:hover {
+  background: linear-gradient(135deg, #38b000, var(--color-success));
   transform: translateY(-3px);
-  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+  box-shadow: var(--shadow-md);
 }
 
-.boton:active {
-  transform: translateY(1px);
+/* Mensaje de error o éxito */
+.mensaje {
+  width: 100%;
+  text-align: center;
+  margin-top: var(--spacing-md);
+  font-weight: var(--font-weight-medium);
+  animation: fadeIn 0.5s ease-in;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-md);
+}
+
+.mensaje.error {
+  color: var(--color-danger);
+  background-color: rgba(var(--color-danger-rgb), 0.1);
+  border-left: 3px solid var(--color-danger);
+}
+
+.mensaje.exito {
+  color: var(--color-success);
+  background-color: rgba(var(--color-success-rgb), 0.1);
+  border-left: 3px solid var(--color-success);
 }
 
 /* Botones inferiores */
 .botones-inferiores {
   margin-top: var(--spacing-lg);
   text-align: center;
+  animation: fadeIn 1.7s ease forwards;
 }
 
 .btn-volver {
-  color: white;
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
   transition: all var(--transition-normal);
-  animation: fadeIn 1.7s ease forwards;
   font-weight: var(--font-weight-medium);
-  position: relative;
-  display: inline-block;
   padding: var(--spacing-sm) var(--spacing-md);
-}
-
-.btn-volver::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background-color: white;
-  transition: width var(--transition-normal);
+  border-radius: var(--border-radius-md);
+  background-color: rgba(255, 255, 255, 0.1);
+  display: inline-block;
 }
 
 .btn-volver:hover {
   color: white;
-  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
 
-.btn-volver:hover::after {
-  width: 100%;
-}
-
-.separador {
-  display: flex;
-  align-items: center;
-  margin: var(--spacing-lg) 0;
-  color: var(--color-gray-medium);
-}
-
-.separador::before,
-.separador::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background-color: var(--color-gray-light);
-}
-
-.separador span {
-  padding: 0 var(--spacing-md);
-  font-size: 0.9rem;
-}
-
-.politicas-texto {
+/* Políticas de privacidad */
+.politicas {
+  margin-top: var(--spacing-md);
   font-size: 0.9rem;
   color: var(--color-gray-medium);
   text-align: center;
-  margin-top: var(--spacing-md);
 }
 
-.politicas-texto a {
+.politicas a {
   color: var(--color-primary);
-  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+}
+
+.politicas a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+/* Footer mejorado */
+footer {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  color: white;
+  text-align: center;
+  padding: var(--spacing-lg) var(--spacing-md);
+  margin-top: var(--spacing-2xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  animation: fadeInUp 1.5s ease forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.3), 
+    transparent
+  );
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  position: relative;
+  z-index: 1;
+}
+
+footer .footer-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-sm);
+}
+
+footer .footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all var(--transition-normal);
+}
+
+footer .footer-links a:hover {
+  color: white;
+  transform: translateY(-2px);
+}
+
+footer .social-icons {
+  margin-top: var(--spacing-md);
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+}
+
+footer .social-icons a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--border-radius-full);
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-normal);
+}
+
+footer .social-icons a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  color: white;
 }
 
 /* Responsive */
 @media (max-width: 576px) {
   header h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
   
-  main {
-    padding: var(--spacing-md);
+  header p {
+    font-size: 1rem;
   }
   
   .formulario {
     padding: var(--spacing-lg);
   }
   
-  .boton {
-    padding: var(--spacing-sm) var(--spacing-md);
-  }
-}
-
-@media (max-height: 700px) {
   body {
     padding: var(--spacing-md);
   }
   
+  footer {
+    padding: var(--spacing-md);
+  }
+  
+  footer .footer-links {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+}
+
+@media (max-height: 800px) {
   header {
-    padding: var(--spacing-lg) var(--spacing-md);
+    margin-bottom: var(--spacing-md);
   }
   
   header h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
   
   .formulario {
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg);
+  }
+  
+  footer {
+    padding: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
   }
 }

@@ -146,7 +146,7 @@ $conn->close();
 
         <!-- Sección de comentarios -->
         <section class="comentarios">
-            <h3>Comentarios de usuarios</h3>
+            <h3>Comentarios</h3>
 
             <?php if (!empty($mensaje_exito)): ?>
                 <p style="color: green;"><?php echo htmlspecialchars($mensaje_exito); ?></p>
