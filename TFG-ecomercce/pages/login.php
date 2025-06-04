@@ -1,17 +1,46 @@
 <?php
-session_start();
+
+// Incluir archivos necesarios
+require_once '../includes/config.php';
 require_once '../includes/conexion.php';
+require_once '../includes/utilidades.php';
+require_once '../includes/mensajes.php';
+require_once '../includes/validacion.php';
+
+// Iniciar sesión
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Redirigir si ya está logueado
+if (usuario_logueado()) {
+    redireccionar('bienvenida.php');
+}
 
 $mensaje = "";
+$tipo_mensaje = "info";
 
 // Procesar formulario de inicio de sesión
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $usuario = trim($_POST["usuario"]);
-    $contrasena = trim($_POST["contrasena"]);
+    try {
+        $usuario = trim($_POST["usuario"]);
+        $contrasena = trim($_POST["contrasena"]);
 
-    if (!empty($usuario) && !empty($contrasena)) {
+        // Validar campos
+        if (empty($usuario)) {
+            throw new Exception("Por favor, introduce tu correo o nombre de usuario.");
+        }
+        
+        if (empty($contrasena)) {
+            throw new Exception("Por favor, introduce tu contraseña.");
+        }
+
         // Consulta preparada para evitar inyección SQL
         $stmt = $conn->prepare("SELECT id_usuario, nombre_usuario, correo, contrasena FROM usuarios WHERE correo = ? OR nombre_usuario = ?");
+        if (!$stmt) {
+            throw new Exception("Error en la preparación de la consulta: " . $conn->error);
+        }
+        
         $stmt->bind_param("ss", $usuario, $usuario);
         $stmt->execute();
         $resultado = $stmt->get_result();
@@ -25,49 +54,52 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION["correo"] = $fila["correo"];
                 $_SESSION["id_usuario"] = $fila["id_usuario"];
                 $_SESSION["nombre_usuario"] = $fila["nombre_usuario"];
-                header("Location: bienvenida.php");
-                exit();
+                
+                // Regenerar ID de sesión para prevenir session fixation
+                session_regenerate_id(true);
+                
+                redireccionar("bienvenida.php");
             } else {
-                $mensaje = "❌ El usuario o la contraseña son incorrectos.";
+                throw new Exception("El usuario o la contraseña son incorrectos.");
             }
         } else {
-            $mensaje = "❌ El usuario o la contraseña son incorrectos.";
+            throw new Exception("El usuario o la contraseña son incorrectos.");
         }
-        $stmt->close();
-    } else {
-        $mensaje = "⚠️ Por favor, completa todos los campos.";
+       
+    } catch (Exception $e) {
+        $mensaje = $e->getMessage();
+        $tipo_mensaje = "error";
+        registrar_error("Error en login: " . $e->getMessage());
     }
-    $conn->close();
 }
+
+// Variables para el header
+$titulo = "Iniciar Sesión - Mi Tienda Online";
+$css_adicional = "../css/login.css";
 ?>
 
-<!DOCTYPE html>
-<html lang="es">
+<?php include 'includes/header.php'; ?>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Iniciar Sesión - Mi Tienda Online</title>
-    <link rel="stylesheet" href="../css/login.css">
+     <link rel="stylesheet" href="../css/login.css">
 </head>
-<body>
-    <header>
+<main>
+    <div class="container">
         <h1>Iniciar Sesión</h1>
         <p>Accede con tu nombre de usuario o correo electrónico.</p>
-    </header>
 
-    <main>
+        <?php if (!empty($mensaje)): ?>
+            <?php echo mostrar_mensaje($mensaje, $tipo_mensaje); ?>
+        <?php endif; ?>
+
         <form action="login.php" method="POST" class="formulario">
             <input type="text" name="usuario" placeholder="Correo o Nombre de Usuario" required>
             <input type="password" name="contrasena" placeholder="Contraseña" required>
             <button type="submit" class="boton">Entrar</button>
         </form>
-        <?php if ($mensaje): ?>
-            <p style="margin-top: 1rem;"><?php echo $mensaje; ?></p>
-        <?php endif; ?>
+        
         <p><a href="web.php" style="color:rgb(247, 184, 135)">← Volver al inicio</a></p>
-    </main>
+    </div>
+</main>
 
-    <footer>
-        <p>&copy; <?php echo date("Y"); ?> Mi Tienda Online - Proyecto TFG</p>
-    </footer>
-</body>
-</html>
+<?php include 'includes/footer.php'; ?>
