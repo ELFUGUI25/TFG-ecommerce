@@ -10,19 +10,6 @@
  */
 
 /**
- * Verifica si el usuario actual tiene permisos de administrador
- * 
- * @return bool True si el usuario es administrador, false en caso contrario
- */
-function es_administrador() {
-    if (session_status() == PHP_SESSION_NONE) {
-        session_start();
-    }
-    
-    return isset($_SESSION['es_admin']) && $_SESSION['es_admin'] === true;
-}
-
-/**
  * Obtiene todos los productos de la base de datos
  * 
  * @param object $conn Conexión a la base de datos

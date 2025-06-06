@@ -9,12 +9,12 @@
  */
 
 // Incluir archivos necesarios
-require_once '../includes/config.php';
-require_once '../includes/conexion.php';
-require_once '../includes/utilidades.php';
-require_once '../includes/mensajes.php';
-require_once '../includes/login_admin.php';
-require_once '../includes/admin_funciones.php';
+require_once '../../includes/config.php';
+require_once '../../includes/conexion.php';
+require_once '../../includes/utilidades.php';
+require_once '../../includes/mensajes.php';
+require_once '../../includes/login_admin.php';
+require_once '../../includes/admin_funciones.php';
 
 // Verificar que el usuario sea administrador
 requerir_admin('login.php');
@@ -38,11 +38,20 @@ $productos = obtener_productos($conn);
 
 // Variables para el header
 $titulo = "Gestionar Productos - Panel de Administración";
-$css_adicional = "../css/admin.css";
+$css_adicional = "../../css/admin.css";
 $pagina_actual = "admin_productos";
 ?>
 
-<?php include '../includes/header.php'; ?>
+<?php include '../../includes/header.php'; ?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Tienda Online</title>
+    <link rel="stylesheet" href="../../css/admin.css">
+</head>
 
 <main class="admin-container">
     <div class="admin-header">
@@ -121,4 +130,4 @@ $pagina_actual = "admin_productos";
     <?php endif; ?>
 </main>
 
-<?php include '../includes/footer.php'; ?>
+<?php include '../../includes/footer.php'; ?>
