@@ -1,0 +1,228 @@
+/* admin.css: estilos para gestión de stock */
+
+/* Contenedor principal */
+.admin-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header sección */
+.admin-header {
+    margin-bottom: 1.5rem;
+}
+
+.admin-header h1 {
+    font-size: 2rem;
+    color: #222;
+    margin-bottom: 0.3rem;
+}
+
+.admin-header p {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 0;
+}
+
+/* Botones de acción en header */
+.admin-actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.admin-actions .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    outline: none;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-outline:hover,
+.btn-outline:focus {
+    background-color: #007bff;
+    color: #fff;
+    outline: none;
+}
+
+/* Mensajes */
+.mensaje {
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.mensaje.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.mensaje.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.mensaje.info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+/* Tabla stock */
+.stock-tabla {
+    overflow-x: auto;
+    margin-top: 1rem;
+}
+
+.stock-tabla table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    min-width: 600px;
+}
+
+.stock-tabla thead {
+    background-color: #007bff;
+    color: white;
+    text-align: left;
+}
+
+.stock-tabla thead th {
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.stock-tabla tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.stock-tabla tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+.stock-tabla tbody td {
+    padding: 0.6rem 1rem;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+/* Stock agotado - texto en rojo y negrita */
+.stock-agotado {
+    color: #dc3545;
+    font-weight: 700;
+}
+
+/* Formulario inline en la tabla */
+.form-stock {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.input-stock {
+    width: 70px;
+    padding: 0.3rem 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-align: center;
+    transition: border-color 0.2s ease;
+}
+
+.input-stock:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Botones de acción dentro de la tabla */
+.btn-accion {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #007bff;
+    font-size: 1.1rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-accion:hover,
+.btn-accion:focus {
+    background-color: #007bff;
+    color: white;
+    outline: none;
+}
+
+/* Botón actualizar: ícono guardar con color verde */
+.btn-actualizar {
+    color: #28a745;
+}
+
+.btn-actualizar:hover,
+.btn-actualizar:focus {
+    background-color: #28a745;
+    color: white;
+}
+
+/* Botón editar: ícono lápiz con color naranja */
+.btn-editar {
+    color: #fd7e14;
+}
+
+.btn-editar:hover,
+.btn-editar:focus {
+    background-color: #fd7e14;
+    color: white;
+}
+
+/* Responsive: tabla scroll horizontal */
+@media (max-width: 600px) {
+    .stock-tabla table {
+        min-width: 100%;
+        font-size: 0.85rem;
+    }
+
+    .input-stock {
+        width: 50px;
+        font-size: 0.85rem;
+    }
+
+    .btn-accion {
+        font-size: 1rem;
+    }
+}

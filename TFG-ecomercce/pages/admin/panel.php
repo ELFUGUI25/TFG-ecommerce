@@ -56,7 +56,7 @@ $pagina_actual = "admin_panel";
             <i class="fas fa-warehouse"></i>
             <span>Gestionar Stock</span>
         </a>
-        <a href="bienvenida.php" class="admin-menu-item">
+        <a href="../bienvenida.php" class="admin-menu-item">
             <i class="fas fa-store"></i>
             <span>Ver Tienda</span>
         </a>

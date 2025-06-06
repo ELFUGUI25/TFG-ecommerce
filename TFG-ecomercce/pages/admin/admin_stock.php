@@ -53,11 +53,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['accion']) && $_POST['
 
 // Obtener todos los productos
 $productos = obtener_productos($conn);
-
-// Variables para el header
-$titulo = "Gestionar Stock - Panel de Administración";
-$css_adicional = "../../css/admin.css";
-$pagina_actual = "admin_stock";
 ?>
 
 <?php include '../../includes/header.php'; ?>
@@ -68,7 +63,7 @@ $pagina_actual = "admin_stock";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Tienda Online</title>
-    <link rel="stylesheet" href="../../css/admin.css">
+    <link rel="stylesheet" href="../../css/admin_stock.css">
 </head>
 <main class="admin-container">
     <div class="admin-header">

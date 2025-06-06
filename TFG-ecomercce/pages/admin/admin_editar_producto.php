@@ -115,7 +115,7 @@ $pagina_actual = "admin_editar_producto";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Tienda Online</title>
-    <link rel="stylesheet" href="../../css/admin.css">
+    <link rel="stylesheet" href="../css/admin_editar_producto.css">
 </head>
 
 <main class="admin-container">
