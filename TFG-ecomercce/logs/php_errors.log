@@ -1,16 +1,97 @@
-[05-Jun-2025 00:49:20 Europe/Madrid] PHP Warning:  include(includes/header.php): Failed to open stream: No such file or directory in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\login.php on line 81
-[05-Jun-2025 00:49:20 Europe/Madrid] PHP Warning:  include(): Failed opening 'includes/header.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\login.php on line 81
-[05-Jun-2025 00:49:20 Europe/Madrid] PHP Warning:  include(includes/footer.php): Failed to open stream: No such file or directory in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\login.php on line 102
-[05-Jun-2025 00:49:20 Europe/Madrid] PHP Warning:  include(): Failed opening 'includes/footer.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\login.php on line 102
-[05-Jun-2025 00:50:06 Europe/Madrid] PHP Warning:  include(includes/header.php): Failed to open stream: No such file or directory in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\login.php on line 81
-[05-Jun-2025 00:50:06 Europe/Madrid] PHP Warning:  include(): Failed opening 'includes/header.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\login.php on line 81
-[05-Jun-2025 00:50:06 Europe/Madrid] PHP Warning:  include(includes/footer.php): Failed to open stream: No such file or directory in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\login.php on line 102
-[05-Jun-2025 00:50:06 Europe/Madrid] PHP Warning:  include(): Failed opening 'includes/footer.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\login.php on line 102
-[05-Jun-2025 00:50:06 Europe/Madrid] PHP Warning:  include(includes/header.php): Failed to open stream: No such file or directory in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\login.php on line 81
-[05-Jun-2025 00:50:06 Europe/Madrid] PHP Warning:  include(): Failed opening 'includes/header.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\login.php on line 81
-[05-Jun-2025 00:50:06 Europe/Madrid] PHP Warning:  include(includes/footer.php): Failed to open stream: No such file or directory in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\login.php on line 102
-[05-Jun-2025 00:50:06 Europe/Madrid] PHP Warning:  include(): Failed opening 'includes/footer.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\login.php on line 102
-[05-Jun-2025 00:51:43 Europe/Madrid] PHP Warning:  include(includes/header.php): Failed to open stream: No such file or directory in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\login.php on line 81
-[05-Jun-2025 00:51:43 Europe/Madrid] PHP Warning:  include(): Failed opening 'includes/header.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\login.php on line 81
-[05-Jun-2025 00:51:43 Europe/Madrid] PHP Warning:  include(includes/footer.php): Failed to open stream: No such file or directory in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\login.php on line 105
-[05-Jun-2025 00:51:43 Europe/Madrid] PHP Warning:  include(): Failed opening 'includes/footer.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\login.php on line 105
+[06-Jun-2025 14:32:26 Europe/Madrid] PHP Warning:  require_once(../includes/conexion.php): Failed to open stream: No such file or directory in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 14
+[06-Jun-2025 14:32:26 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required '../includes/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php:14
+Stack trace:
+#0 {main}
+  thrown in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 14
+[06-Jun-2025 14:32:27 Europe/Madrid] PHP Warning:  require_once(../includes/conexion.php): Failed to open stream: No such file or directory in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 14
+[06-Jun-2025 14:32:27 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required '../includes/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php:14
+Stack trace:
+#0 {main}
+  thrown in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 14
+[06-Jun-2025 14:32:27 Europe/Madrid] PHP Warning:  require_once(../includes/conexion.php): Failed to open stream: No such file or directory in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 14
+[06-Jun-2025 14:32:27 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required '../includes/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php:14
+Stack trace:
+#0 {main}
+  thrown in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 14
+[06-Jun-2025 14:32:27 Europe/Madrid] PHP Warning:  require_once(../includes/conexion.php): Failed to open stream: No such file or directory in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 14
+[06-Jun-2025 14:32:27 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required '../includes/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php:14
+Stack trace:
+#0 {main}
+  thrown in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 14
+[06-Jun-2025 14:34:13 Europe/Madrid] PHP Warning:  require_once(../includes/conexion.php): Failed to open stream: No such file or directory in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 17
+[06-Jun-2025 14:34:13 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required '../includes/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php:17
+Stack trace:
+#0 {main}
+  thrown in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 17
+[06-Jun-2025 14:34:14 Europe/Madrid] PHP Warning:  require_once(../includes/conexion.php): Failed to open stream: No such file or directory in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 17
+[06-Jun-2025 14:34:14 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required '../includes/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php:17
+Stack trace:
+#0 {main}
+  thrown in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 17
+[06-Jun-2025 14:34:14 Europe/Madrid] PHP Warning:  require_once(../includes/conexion.php): Failed to open stream: No such file or directory in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 17
+[06-Jun-2025 14:34:14 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required '../includes/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php:17
+Stack trace:
+#0 {main}
+  thrown in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 17
+[06-Jun-2025 14:34:15 Europe/Madrid] PHP Warning:  require_once(../includes/conexion.php): Failed to open stream: No such file or directory in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 17
+[06-Jun-2025 14:34:15 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required '../includes/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php:17
+Stack trace:
+#0 {main}
+  thrown in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 17
+[06-Jun-2025 14:34:26 Europe/Madrid] PHP Warning:  require_once(../includes/conexion.php): Failed to open stream: No such file or directory in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 17
+[06-Jun-2025 14:34:26 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required '../includes/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php:17
+Stack trace:
+#0 {main}
+  thrown in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 17
+[06-Jun-2025 14:36:53 Europe/Madrid] PHP Warning:  require_once(../includes/conexion.php): Failed to open stream: No such file or directory in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 17
+[06-Jun-2025 14:36:53 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required '../includes/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php:17
+Stack trace:
+#0 {main}
+  thrown in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 17
+[06-Jun-2025 14:36:54 Europe/Madrid] PHP Warning:  require_once(../includes/conexion.php): Failed to open stream: No such file or directory in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 17
+[06-Jun-2025 14:36:54 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required '../includes/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php:17
+Stack trace:
+#0 {main}
+  thrown in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 17
+[06-Jun-2025 14:39:29 Europe/Madrid] PHP Warning:  require_once(../includes/conexion.php): Failed to open stream: No such file or directory in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 17
+[06-Jun-2025 14:39:29 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required '../includes/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php:17
+Stack trace:
+#0 {main}
+  thrown in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 17
+[06-Jun-2025 14:40:11 Europe/Madrid] PHP Warning:  require_once(../includes/conexion.php): Failed to open stream: No such file or directory in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 17
+[06-Jun-2025 14:40:11 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required '../includes/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php:17
+Stack trace:
+#0 {main}
+  thrown in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 17
+[06-Jun-2025 14:40:11 Europe/Madrid] PHP Warning:  require_once(../includes/conexion.php): Failed to open stream: No such file or directory in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 17
+[06-Jun-2025 14:40:11 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required '../includes/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php:17
+Stack trace:
+#0 {main}
+  thrown in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 17
+[06-Jun-2025 14:41:15 Europe/Madrid] PHP Warning:  require_once(../includes/conexion.php): Failed to open stream: No such file or directory in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 17
+[06-Jun-2025 14:41:15 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required '../includes/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php:17
+Stack trace:
+#0 {main}
+  thrown in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 17
+[06-Jun-2025 14:44:40 Europe/Madrid] PHP Warning:  require_once(../includes/mensajes.php): Failed to open stream: No such file or directory in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 16
+[06-Jun-2025 14:44:40 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required '../includes/mensajes.php' (include_path='C:\xampp\php\PEAR') in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php:16
+Stack trace:
+#0 {main}
+  thrown in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 16
+[06-Jun-2025 14:44:40 Europe/Madrid] PHP Warning:  require_once(../includes/mensajes.php): Failed to open stream: No such file or directory in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 16
+[06-Jun-2025 14:44:40 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required '../includes/mensajes.php' (include_path='C:\xampp\php\PEAR') in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php:16
+Stack trace:
+#0 {main}
+  thrown in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 16
+[06-Jun-2025 14:44:40 Europe/Madrid] PHP Warning:  require_once(../includes/mensajes.php): Failed to open stream: No such file or directory in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 16
+[06-Jun-2025 14:44:40 Europe/Madrid] PHP Fatal error:  Uncaught Error: Failed opening required '../includes/mensajes.php' (include_path='C:\xampp\php\PEAR') in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php:16
+Stack trace:
+#0 {main}
+  thrown in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\pages\admin\panel.php on line 16
+[06-Jun-2025 14:44:53 Europe/Madrid] PHP Fatal error:  Cannot redeclare es_administrador() (previously declared in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\includes\login_admin.php:48) in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\includes\admin_funciones.php on line 22
+[06-Jun-2025 14:44:53 Europe/Madrid] PHP Fatal error:  Cannot redeclare es_administrador() (previously declared in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\includes\login_admin.php:48) in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\includes\admin_funciones.php on line 22
+[06-Jun-2025 14:44:54 Europe/Madrid] PHP Fatal error:  Cannot redeclare es_administrador() (previously declared in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\includes\login_admin.php:48) in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\includes\admin_funciones.php on line 22
+[06-Jun-2025 14:44:54 Europe/Madrid] PHP Fatal error:  Cannot redeclare es_administrador() (previously declared in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\includes\login_admin.php:48) in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\includes\admin_funciones.php on line 22
+[06-Jun-2025 14:45:26 Europe/Madrid] PHP Fatal error:  Cannot redeclare es_administrador() (previously declared in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\includes\login_admin.php:48) in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\includes\admin_funciones.php on line 22
+[06-Jun-2025 14:45:27 Europe/Madrid] PHP Fatal error:  Cannot redeclare es_administrador() (previously declared in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\includes\login_admin.php:48) in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\includes\admin_funciones.php on line 22
+[06-Jun-2025 14:48:03 Europe/Madrid] PHP Fatal error:  Cannot redeclare es_administrador() (previously declared in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\includes\login_admin.php:48) in C:\Users\secoc\OneDrive\Documentos\PROGRAMACION\TFG-ecomercce\includes\admin_funciones.php on line 22
