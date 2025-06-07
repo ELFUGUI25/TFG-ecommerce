@@ -22,7 +22,6 @@ requerir_admin('login.php');
 
 // Variables para el header
 $titulo = "Panel de Administración - Mi Tienda Online";
-$css_adicional = "../css/admin.css";
 $pagina_actual = "admin_panel";
 ?>
 
@@ -34,7 +33,7 @@ $pagina_actual = "admin_panel";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Tienda Online</title>
-    <link rel="stylesheet" href="../../css/admin.css">
+    <link rel="stylesheet" href="../../css/admin_panel.css">
 </head>
 
 <main class="admin-container">
