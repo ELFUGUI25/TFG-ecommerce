@@ -1,14 +1,16 @@
 <?php
 session_start();
 
-// Verifica si el usuario está autenticado
+// Incluir archivos necesarios
+require_once '../includes/config.php';
+require_once '../includes/conexion.php';
+require_once '../includes/mensajes.php';
+
+// Verificar si el usuario está autenticado
 if (!isset($_SESSION['nombre_usuario'])) {
     header("Location: login.php");
     exit();
 }
-
-// Conexión a la base de datos
-require_once '../includes/conexion.php';
 
 // Inicializar variables mensajes
 $mensaje_exito = '';
@@ -58,25 +60,14 @@ if ($result) {
     $result->free();
 }
 $conn->close();
-?>
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Panel de Usuario - Mi Tienda Online</title>
-    <link rel="stylesheet" href="../css/bienvenida.css">
-</head>
-<body>
-    <header class="top-bar">
-        <h1>Mi Tienda Online</h1>
-        <nav>
-            <a href="web.php" class="nav-btn <?php echo basename($_SERVER['PHP_SELF']) == 'web.php' ? 'activo' : ''; ?>">Inicio</a>
-            <a href="catalogo.php" class="nav-btn <?php echo basename($_SERVER['PHP_SELF']) == 'catalogo.php' ? 'activo' : ''; ?>">Catálogo</a>
-            <a href="perfil.php" class="nav-btn <?php echo basename($_SERVER['PHP_SELF']) == 'perfil.php' ? 'activo' : ''; ?>">Mi Perfil</a>
-            <a href="politicas.php" class="nav-btn <?php echo basename($_SERVER['PHP_SELF']) == 'politicas.php' ? 'activo' : ''; ?>">Políticas</a>
-        </nav>
-    </header>
+// Variables para el header
+$titulo = "Panel de Usuario - Mi Tienda Online";
+$css_adicional = "../css/bienvenida.css";
+$pagina_actual = "bienvenida";
+
+include '../includes/header.php';
+?>
 
     <main class="contenido">
         <section class="bienvenida">
@@ -183,3 +174,4 @@ $conn->close();
     </footer>
 </body>
 </html>
+
