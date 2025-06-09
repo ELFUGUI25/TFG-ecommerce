@@ -114,9 +114,34 @@ $pagina_actual = "admin_editar_producto";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Tienda Online</title>
-    <link rel="stylesheet" href="../css/admin_editar_producto.css">
+    <title>Panel de Administración - Mi Tienda Online</title>
+    <link rel="stylesheet" href="../../css/admin_editar_producto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+<body>
+    <header class="admin-header-top">
+        <div class="admin-header-container">
+            <div class="admin-logo">
+                <i class="fas fa-cogs"></i>
+                <h1>Panel de Administración</h1>
+            </div>
+            <nav class="admin-nav">
+                <a href="panel.php" class="nav-link">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+                <a href="admin_productos.php" class="nav-link active">
+                    <i class="fas fa-box"></i> Productos
+                </a>
+                <a href="admin_stock.php" class="nav-link">
+                    <i class="fas fa-warehouse"></i> Stock
+                </a>
+                <a href="../logout.php" class="nav-link logout">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                </a>
+            </nav>
+        </div>
+    </header>
 
 <main class="admin-container">
     <div class="admin-header">
@@ -199,6 +224,27 @@ $pagina_actual = "admin_editar_producto";
             </form>
         </div>
     <?php endif; ?>
-</main>
 
-<?php include '../../includes/footer.php'; ?>
+    <footer class="admin-footer">
+        <div class="admin-footer-container">
+            <div class="footer-left">
+                <p>&copy; 2025 Mi Tienda Online - Panel de Administración</p>
+                <p>Sistema de gestión empresarial</p>
+            </div>
+            <div class="footer-right">
+                <div class="footer-stats">
+                    <span class="stat-item">
+                        <i class="fas fa-shield-alt"></i>
+                        Sesión segura
+                    </span>
+                    <span class="stat-item">
+                        <i class="fas fa-clock"></i>
+                        <?php echo date('H:i'); ?>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

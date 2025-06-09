@@ -4,10 +4,10 @@
  * 
  * Esta página permite a los usuarios iniciar sesión en la aplicación
  * utilizando su correo electrónico o nombre de usuario y contraseña.
- * También permite el acceso al panel de administración con credenciales especiales.
+ * También permite el acceso al panel de administración para usuarios con rol admin.
  * 
  * @author Proyecto TFG
- * @version 1.1
+ * @version 1.2
  */
 
 // Incluir archivos necesarios
@@ -46,8 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             throw new Exception("Por favor, introduce tu contraseña.");
         }
         
-        // Verificar si son credenciales de administrador
-        if (verificar_admin($usuario, $contrasena)) {
+        // Verificar si son credenciales de administrador (compatibilidad con adminasir)
+        if ($usuario === 'adminasir' && $contrasena === 'admin') {
             // Establecer sesión de administrador
             establecer_sesion_admin();
             
@@ -56,8 +56,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         }
 
-        // Si no es admin, verificar credenciales normales
-        $stmt = $conn->prepare("SELECT id_usuario, nombre_usuario, correo, contrasena FROM usuarios WHERE correo = ? OR nombre_usuario = ?");
+        // Verificar credenciales en la base de datos
+        $stmt = $conn->prepare("SELECT id_usuario, nombre_usuario, correo, contrasena, rol FROM usuarios WHERE correo = ? OR nombre_usuario = ?");
         if (!$stmt) {
             throw new Exception("Error en la preparación de la consulta: " . $conn->error);
         }
@@ -75,7 +75,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION["correo"] = $fila["correo"];
                 $_SESSION["id_usuario"] = $fila["id_usuario"];
                 $_SESSION["nombre_usuario"] = $fila["nombre_usuario"];
-                $_SESSION["es_admin"] = false; // Usuario normal
+                
+                // Verificar si el usuario tiene rol de administrador
+                if (isset($fila["rol"]) && $fila["rol"] === "admin") {
+                    // Establecer sesión de administrador
+                    establecer_sesion_admin($fila["nombre_usuario"], $fila["id_usuario"]);
+                    
+                    // Redirigir al panel de administración
+                    redireccionar("admin/panel.php");
+                    exit();
+                } else {
+                    $_SESSION["es_admin"] = false; // Usuario normal
+                }
                 
                 // Regenerar ID de sesión para prevenir session fixation
                 session_regenerate_id(true);

@@ -29,8 +29,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             // Encriptar contraseña y registrar usuario
             $contrasena_hash = password_hash($contrasena, PASSWORD_DEFAULT);
-            $stmt = $conn->prepare("INSERT INTO usuarios (nombre, nombre_usuario, correo, contrasena) VALUES (?, ?, ?, ?)");
-            $stmt->bind_param("ssss", $nombre, $nombre_usuario, $correo, $contrasena_hash);
+            $rol = 'admin';
+            $stmt = $conn->prepare("INSERT INTO usuarios (nombre, nombre_usuario, correo, contrasena, rol) VALUES (?, ?, ?, ?, ?)");
+            $stmt->bind_param("sssss", $nombre, $nombre_usuario, $correo, $contrasena_hash, $rol);
+
 
             if ($stmt->execute()) {
                 $mensaje = "✅ Registro exitoso. Ya puedes iniciar sesión.";

@@ -4,17 +4,19 @@
  * 
  * Esta página permite a los usuarios iniciar sesión en la aplicación
  * utilizando su correo electrónico o nombre de usuario y contraseña.
+ * También permite el acceso al panel de administración para usuarios con rol admin.
  * 
  * @author Proyecto TFG
- * @version 1.1
+ * @version 1.2
  */
 
 // Incluir archivos necesarios
-require_once 'includes/config.php';
-require_once 'includes/conexion.php';
-require_once 'includes/utilidades.php';
-require_once 'includes/mensajes.php';
-require_once 'includes/validacion.php';
+require_once '../includes/config.php';
+require_once '../includes/conexion.php';
+require_once '../includes/utilidades.php';
+require_once '../includes/mensajes.php';
+require_once '../includes/validacion.php';
+require_once '../includes/login_admin.php';
 
 // Iniciar sesión
 if (session_status() == PHP_SESSION_NONE) {
@@ -43,9 +45,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($contrasena)) {
             throw new Exception("Por favor, introduce tu contraseña.");
         }
+        
+        // Verificar si son credenciales de administrador (compatibilidad con adminasir)
+        if ($usuario === 'adminasir' && $contrasena === 'admin') {
+            // Establecer sesión de administrador
+            establecer_sesion_admin();
+            
+            // Redirigir al panel de administración
+            redireccionar("admin/panel.php");
+            exit();
+        }
 
-        // Consulta preparada para evitar inyección SQL
-        $stmt = $conn->prepare("SELECT id_usuario, nombre_usuario, correo, contrasena FROM usuarios WHERE correo = ? OR nombre_usuario = ?");
+        // Verificar credenciales en la base de datos
+        $stmt = $conn->prepare("SELECT id_usuario, nombre_usuario, correo, contrasena, rol FROM usuarios WHERE correo = ? OR nombre_usuario = ?");
         if (!$stmt) {
             throw new Exception("Error en la preparación de la consulta: " . $conn->error);
         }
@@ -63,6 +75,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION["correo"] = $fila["correo"];
                 $_SESSION["id_usuario"] = $fila["id_usuario"];
                 $_SESSION["nombre_usuario"] = $fila["nombre_usuario"];
+                
+                // Verificar si el usuario tiene rol de administrador
+                if (isset($fila["rol"]) && $fila["rol"] === "admin") {
+                    // Establecer sesión de administrador
+                    establecer_sesion_admin($fila["nombre_usuario"], $fila["id_usuario"]);
+                    
+                    // Redirigir al panel de administración
+                    redireccionar("admin/panel.php");
+                    exit();
+                } else {
+                    $_SESSION["es_admin"] = false; // Usuario normal
+                }
                 
                 // Regenerar ID de sesión para prevenir session fixation
                 session_regenerate_id(true);
@@ -87,7 +111,7 @@ $titulo = "Iniciar Sesión - Mi Tienda Online";
 $css_adicional = "../css/login.css";
 ?>
 
-<?php include 'includes/header.php'; ?>
+<?php include '../includes/header.php'; ?>
 
 <main>
     <div class="container">
@@ -108,4 +132,4 @@ $css_adicional = "../css/login.css";
     </div>
 </main>
 
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>
