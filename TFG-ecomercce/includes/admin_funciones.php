@@ -108,7 +108,7 @@ function agregar_producto($conn, $datos_producto) {
                  VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($query);
         $stmt->bind_param(
-            "ssdiisii", 
+            "ssdisisi", 
             $datos_producto['nombre'], 
             $descripcion, 
             $datos_producto['precio'], 
@@ -201,7 +201,7 @@ function actualizar_producto($conn, $id_producto, $datos_producto) {
                  WHERE id_producto = ?";
         $stmt = $conn->prepare($query);
         $stmt->bind_param(
-            "ssdiisiii", 
+            "ssdisisii", 
             $datos_producto['nombre'], 
             $descripcion, 
             $datos_producto['precio'], 
