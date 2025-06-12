@@ -361,3 +361,62 @@ function obtener_categorias($conn) {
         return [];
     }
 }
+
+
+/**
+ * Añade una nueva categoría a la base de datos
+ * 
+ * @param object $conn Conexión a la base de datos
+ * @param string $nombre Nombre de la categoría
+ * @param string $descripcion Descripción de la categoría (opcional)
+ * @return array Resultado de la operación con claves 'success', 'message' y 'id_categoria'
+ */
+function agregar_categoria($conn, $nombre, $descripcion = '') {
+    try {
+        if (empty($nombre)) {
+            return [
+                'success' => false,
+                'message' => "El nombre de la categoría es obligatorio."
+            ];
+        }
+
+        // Verificar si la categoría ya existe
+        $query_check = "SELECT COUNT(*) FROM categorias WHERE nombre = ?";
+        $stmt_check = $conn->prepare($query_check);
+        $stmt_check->bind_param("s", $nombre);
+        $stmt_check->execute();
+        $count = 0; // Inicializar la variable para evitar el error 'Undefined variable'
+        $stmt_check->bind_result($count);
+        $stmt_check->fetch();
+        $stmt_check->close();
+
+        if ($count > 0) {
+            return [
+                'success' => false,
+                'message' => "La categoría '" . htmlspecialchars($nombre) . "' ya existe."
+            ];
+        }
+
+        $query = "INSERT INTO categorias (nombre, descripcion) VALUES (?, ?)";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("ss", $nombre, $descripcion);
+        
+        if ($stmt->execute()) {
+            return [
+                'success' => true,
+                'message' => "Categoría '" . htmlspecialchars($nombre) . "' añadida correctamente.",
+                'id_categoria' => $conn->insert_id
+            ];
+        } else {
+            throw new Exception($stmt->error);
+        }
+    } catch (Exception $e) {
+        registrar_error("Error al agregar categoría: " . $e->getMessage());
+        return [
+            'success' => false,
+            'message' => "Error al agregar la categoría: " . $e->getMessage()
+        ];
+    }
+}
+
+

@@ -38,8 +38,30 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     }
 }
 
-// Procesar formulario de edición de producto
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $producto) {
+// Procesar formulario de nueva categoría
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nueva_categoria_nombre'])) {
+    try {
+        $nueva_categoria_nombre = trim($_POST['nueva_categoria_nombre'] ?? '');
+        $nueva_categoria_descripcion = trim($_POST['nueva_categoria_descripcion'] ?? '');
+
+        if (empty($nueva_categoria_nombre)) {
+            throw new Exception("El nombre de la nueva categoría es obligatorio.");
+        }
+
+        $resultado_categoria = agregar_categoria($conn, $nueva_categoria_nombre, $nueva_categoria_descripcion);
+
+        if ($resultado_categoria['success']) {
+            $mensaje = $resultado_categoria['message'];
+            $tipo_mensaje = 'success';
+        } else {
+            throw new Exception($resultado_categoria['message']);
+        }
+    } catch (Exception $e) {
+        $mensaje = $e->getMessage();
+        $tipo_mensaje = 'error';
+    }
+} else if ($_SERVER['REQUEST_METHOD'] === 'POST' && $producto) {
+    // Procesar formulario de edición de producto
     try {
         // Validar campos obligatorios
         $nombre = trim($_POST['nombre'] ?? '');
@@ -98,7 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $producto) {
     }
 }
 
-// Obtener categorías para el selector
+// Obtener categorías para el selector (se recargan después de añadir una nueva)
 $categorias = obtener_categorias($conn);
 
 // Variables para el header
@@ -222,6 +244,23 @@ $pagina_actual = "admin_editar_producto";
                     <a href="admin_productos.php" class="btn btn-outline">Cancelar</a>
                 </div>
             </form>
+
+            <hr class="form-divider">
+
+            <h2>Añadir Nueva Categoría</h2>
+            <form method="POST" action="admin_editar_producto.php?id=<?php echo $id_producto; ?>" class="admin-form">
+                <div class="form-group">
+                    <label for="nueva_categoria_nombre">Nombre de la Categoría *</label>
+                    <input type="text" id="nueva_categoria_nombre" name="nueva_categoria_nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="nueva_categoria_descripcion">Descripción (Opcional)</label>
+                    <textarea id="nueva_categoria_descripcion" name="nueva_categoria_descripcion" rows="2"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-secondary">Crear Categoría</button>
+                </div>
+            </form>
         </div>
     <?php endif; ?>
 
@@ -248,3 +287,5 @@ $pagina_actual = "admin_editar_producto";
 
 </body>
 </html>
+
+
